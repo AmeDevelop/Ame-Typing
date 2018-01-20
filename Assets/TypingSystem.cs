@@ -38,7 +38,7 @@ public class TypingSystem {
 	//入力に成功すれば1，失敗すれば0を返す．
 	public int InputKey(string input){
 
-		List<int> removeList = new List<int> ();
+		// List<int> removeList = new List<int> ();
 
 		bool inputSucceeded = false;
 
@@ -504,7 +504,8 @@ public class TypingSystem {
 			break;
 		case ".":
 			tips.Add(new PatternTip("nn"));
-			break;
+            tips.Add(new PatternTip("xn"));
+                break;
 		case "ぁ":
 			tips.Add(new PatternTip("xa"));
 			tips.Add(new PatternTip("la"));

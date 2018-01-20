@@ -282,6 +282,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\btnStart.cs" />
     <Compile Include="Assets\Lirycs.cs" />
     <Compile Include="Assets\TypingObject.cs" />
     <Compile Include="Assets\TypingSystem.cs" />
