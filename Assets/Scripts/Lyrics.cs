@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lirycs : MonoBehaviour {
+public class Lyrics : MonoBehaviour {
 
     public TextAsset resouce;
     private string[] words;

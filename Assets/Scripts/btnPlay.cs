@@ -9,7 +9,7 @@ public class btnPlay : MonoBehaviour {
     public Text alphabetTextMesh;
     private TypingSystem ts;
     private string[] keys = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", };
-    public Lirycs lirycs;
+    public Lyrics lyrics;
 
     private Toggle btn_play;
 
@@ -36,7 +36,7 @@ public class btnPlay : MonoBehaviour {
             }
             if (ts.isEnded())
             {
-                ts.SetInputString(lirycs.GetRandomWord());
+                ts.SetInputString(lyrics.GetRandomWord());
                 UpdateText();
             }
         }
@@ -49,7 +49,7 @@ public class btnPlay : MonoBehaviour {
         if (btn_play.isOn)
         {
             Debug.Log("Play started:");
-            ts.SetInputString(lirycs.GetRandomWord());
+            ts.SetInputString(lyrics.GetRandomWord());
             UpdateText();
         }
         else

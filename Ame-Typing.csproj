@@ -282,12 +282,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\btnPlay.cs" />
-    <Compile Include="Assets\Lirycs.cs" />
-    <Compile Include="Assets\TypingSystem.cs" />
+    <Compile Include="Assets\Scripts\btnPlay.cs" />
+    <Compile Include="Assets\Scripts\Lyrics.cs" />
+    <Compile Include="Assets\Scripts\Model\LyricsModel.cs" />
+    <Compile Include="Assets\Scripts\TypingSystem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Lirycs\dictionary.txt" />
+    <None Include="Assets\Lyrics\dictionary.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 339231774}
   - component: {fileID: 339231775}
   - component: {fileID: 339231776}
+  - component: {fileID: 339231777}
   m_Layer: 5
   m_Name: btn_play
   m_TagString: Untagged
@@ -288,7 +289,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringTextMesh: {fileID: 1799395568}
   alphabetTextMesh: {fileID: 1067978628}
-  lirycs: {fileID: 926413518}
+  lyrics: {fileID: 926413518}
+--- !u!114 &339231777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 339231773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a4ce03c59513940bd69ad21dcf29b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resouce: {fileID: 4900000, guid: 40c14a958c1607d4598f0605b7942e95, type: 3}
 --- !u!1 &636286794
 GameObject:
   m_ObjectHideFlags: 0
