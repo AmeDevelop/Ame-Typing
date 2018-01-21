@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class btnStart : MonoBehaviour {
+public class btnPlay : MonoBehaviour {
 
     public Text stringTextMesh;
     public Text alphabetTextMesh;
@@ -11,46 +11,61 @@ public class btnStart : MonoBehaviour {
     private string[] keys = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", };
     public Lirycs lirycs;
 
+    private Toggle btn_play;
+
     // Use this for initialization
     void Start () {
-		
-	}
-
-    public void onClick()
-    {
-        Debug.Log("Button Push !!");
         ts = new TypingSystem();
-        ts.SetInputString(lirycs.GetRandomWord());
-        UpdateText();
+        btn_play = GetComponent<Toggle>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        foreach (string key in keys)
+    void Update () {
+        if (btn_play.isOn)
         {
-            if (Input.GetKeyDown(key))
+            foreach (string key in keys)
             {
-                if (ts.InputKey(key) == 1)
+                if (Input.GetKeyDown(key))
                 {
-                    UpdateText();
+                    if (ts.InputKey(key) == 1)
+                    {
+                        UpdateText();
+                    }
+                    break;
                 }
-                break;
+            }
+            if (ts.isEnded())
+            {
+                ts.SetInputString(lirycs.GetRandomWord());
+                UpdateText();
             }
         }
+    }
 
-        if (ts.isEnded())
+
+    // トグル時のイベント
+    public void onValueChanged()
+    {
+        if (btn_play.isOn)
         {
+            Debug.Log("Play started:");
             ts.SetInputString(lirycs.GetRandomWord());
             UpdateText();
         }
+        else
+        {
+            Debug.Log("Play canceled:");
+            stringTextMesh.text = "PRESS START !!";
+            alphabetTextMesh.text = "PRESS START !!";
+        }
     }
 
-    // Update is called once per frame
 
+    // テキストの更新
     void UpdateText()
     {
         stringTextMesh.text = "<color=red>" + ts.GetInputedString() + "</color>" + ts.GetRestString();
         alphabetTextMesh.text = "<color=red>" + ts.GetInputedKey() + "</color>" + ts.GetRestKey();
     }
+
 }
