@@ -18,6 +18,8 @@ public class Line
 {
     public int num { get; set; }
     public string lyric { get; set; }
+    [System.Xml.Serialization.XmlIgnore]
     public string color { get; set; }
+    [System.Xml.Serialization.XmlIgnore]
     public bool isMe { get; set; }
 }
