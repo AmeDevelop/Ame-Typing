@@ -7,8 +7,6 @@ public class Lyrics : MonoBehaviour {
 
     //public TextAsset resouce;
     private LyricsModel lirycs;
-    //private int pageCnt;
-    //private string[] words;
 
     // Use this for initialization
     void Start () {
