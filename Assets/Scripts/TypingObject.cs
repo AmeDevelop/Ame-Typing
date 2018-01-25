@@ -21,6 +21,11 @@ public class TypingObject : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+    }
+
+    private void Awake()
+    {
         ts1 = new TypingSystem();
         ts2 = new TypingSystem();
         ts3 = new TypingSystem();
@@ -33,12 +38,29 @@ public class TypingObject : MonoBehaviour {
 		
 	}
 
+
+    /// <summary>
+    /// 歌詞データ読み込み
+    /// </summary>
+    public void GetLirycs()
+    {
+        lyrics.LoadLyrics();
+    }
+
+    /// <summary>
+    /// インターバル時間取得
+    /// </summary>
+    /// <returns></returns>
+    public string GetInterval()
+    {
+        return lyrics.GetStartTime(pageCnt);
+    }
+
     /// <summary>
     /// タイピングスタート
     /// </summary>
     public void StartTyping ()
     {
-        lyrics.LoadLyrics();
         InitText();
     }
 

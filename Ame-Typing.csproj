@@ -288,6 +288,7 @@
     <Compile Include="Assets\Scripts\Lyrics_original.cs" />
     <Compile Include="Assets\Scripts\Model\LyricsModel.cs" />
     <Compile Include="Assets\Scripts\MusicObject.cs" />
+    <Compile Include="Assets\Scripts\TimerObject.cs" />
     <Compile Include="Assets\Scripts\TypingObject.cs" />
     <Compile Include="Assets\Scripts\TypingSystem.cs" />
     <Compile Include="Assets\Scripts\Util\XmlAccess.cs" />

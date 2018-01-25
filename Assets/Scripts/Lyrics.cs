@@ -48,7 +48,22 @@ public class Lyrics : MonoBehaviour {
     }
 
     /// <summary>
-    /// 歌詞データのセット
+    /// スタート時間の取得
+    /// </summary>
+    /// <param name="page"></param>
+    /// <returns></returns>
+    public string GetStartTime(int page)
+    {
+        if (page > lirycs.pages.Count)
+        {
+            return "0";
+        }
+        return lirycs.pages[page].startTIme;
+    }
+
+
+    /// <summary>
+    /// 歌詞データの取得
     /// </summary>
     /// <returns></returns>
     public string GetLines(int page, int line)
@@ -64,5 +79,4 @@ public class Lyrics : MonoBehaviour {
 
         return lirycs.pages[page].lines[line].lyric;
     }
-
 }
