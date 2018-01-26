@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class btnPlay : MonoBehaviour {
 
-    public TypingObject typeObj;
+    public TimerObject timeObj;
     public MusicObject musicObj;
     private Toggle btn_play;
 
@@ -16,10 +16,10 @@ public class btnPlay : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (btn_play.isOn)
-        {
-            typeObj.Control();
-         }
+        //if (btn_play.isOn)
+        //{
+        //    timeObj.Typing();
+        // }
     }
 
 
@@ -29,13 +29,13 @@ public class btnPlay : MonoBehaviour {
         if (btn_play.isOn)
         {
             Debug.Log("Play started:");
-            typeObj.StartTyping();
             musicObj.StartMusic();
+            timeObj.StartTimer();
         }
         else
         {
             Debug.Log("Play canceled:");
-            typeObj.CancelTyping();
+            timeObj.CancelTimer();
             musicObj.CancelMusic();
         }
     }

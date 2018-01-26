@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class TimerObject : MonoBehaviour {
 
-    private IEnumerator coroutine;
     public TypingObject typeObj;
+    private bool started;
 
     // Use this for initialization
     void Start () {
         typeObj.GetLirycs();
+        started = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update () {
+        if (started)
+        {
+            typeObj.Control();
+        }
+
+    }
 
     /// <summary>
     /// 曲タイマースタート
     /// </summary>
     public void StartTimer()
     {
-          
-        string milisec = typeObj.GetInterval();
-        coroutine = WaitForInterval(float.Parse(milisec));
-        StartCoroutine(coroutine);
-        typeObj.StartTyping();
+        typeObj.InitText();
+        StartCoroutine("Coroutine");
+        started = true;
     }
 
     /// <summary>
@@ -34,12 +37,24 @@ public class TimerObject : MonoBehaviour {
     /// </summary>
     public void CancelTimer()
     {
-        StopCoroutine(coroutine);
+        StopCoroutine("Coroutine");
+        typeObj.CancelTyping();
+        started = false;
     }
 
-    private IEnumerator WaitForInterval(float sec)
+    /// <summary>
+    /// タイマー毎の処理
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator Coroutine( )
     {
-            yield return new WaitForSeconds(sec);
+        for (int i = 0; i <= typeObj.GetMaxPage() - 1; ++i)
+        {
+            // インターバルを取得し、時間が来るまでWait
+            string milisec = typeObj.GetInterval(i);
+            yield return new WaitForSeconds(float.Parse(milisec));
+            typeObj.UpdateText(i);
+        }
             
     }
 }

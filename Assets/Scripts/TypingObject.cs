@@ -17,7 +17,8 @@ public class TypingObject : MonoBehaviour {
 
     private string[] keys = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", };
     public Lyrics lyrics;
-    private int pageCnt;
+
+    public SETypeObject setype;
 
     // Use this for initialization
     void Start () {
@@ -30,7 +31,7 @@ public class TypingObject : MonoBehaviour {
         ts2 = new TypingSystem();
         ts3 = new TypingSystem();
         ts4 = new TypingSystem();
-        pageCnt = 0;
+        //pageCnt = 0;
     }
 
     // Update is called once per frame
@@ -50,19 +51,29 @@ public class TypingObject : MonoBehaviour {
     /// <summary>
     /// インターバル時間取得
     /// </summary>
-    /// <returns></returns>
-    public string GetInterval()
+    /// <param name="page"/>
+    /// <returns>interval</returns>
+    public string GetInterval(int page)
     {
-        return lyrics.GetStartTime(pageCnt);
+        return lyrics.GetStartTime(page);
     }
 
     /// <summary>
-    /// タイピングスタート
+    /// ページ数取得
     /// </summary>
-    public void StartTyping ()
+    /// <returns></returns>
+    public int GetMaxPage()
     {
-        InitText();
+        return lyrics.GetMaxPage();
     }
+
+    ///// <summary>
+    ///// タイピングスタート
+    ///// </summary>
+    //public void StartTyping ()
+    //{
+    //    InitText();
+    //}
 
     /// <summary>
     /// タイピングキャンセル
@@ -74,7 +85,7 @@ public class TypingObject : MonoBehaviour {
         stringTextMesh3.text = "PRESS START !!";
         stringTextMesh4.text = "PRESS START !!";
         alphabetTextMesh.text = "PRESS START !!";
-        pageCnt = 0;
+        //pageCnt = 0;
     }
 
     /// <summary>
@@ -84,33 +95,51 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     public void Control ()
     {
+        if (ts1.isEnded() && ts2.isEnded() && ts3.isEnded() && ts4.isEnded())
+        {
+            return;
+        }
+
         foreach (string key in keys)
         {
             if (Input.GetKeyDown(key))
             {
                 if (ts1.InputKey(key) == 1 || ts2.InputKey(key) == 1 || ts3.InputKey(key) == 1 || ts4.InputKey(key) == 1)
                 {
+                    setype.OKtype();
                     UpdateText();
+                } else
+                {
+                    setype.NGtype();
                 }
                 break;
             }
         }
-        if (ts1.isEnded() && ts2.isEnded() && ts3.isEnded() && ts4.isEnded())
-        {
-            pageCnt++;
-            InitText();
-        }
-    }
+   }
+
 
     /// <summary>
     /// タイピング文字列の初期化
     /// </summary>
-    void InitText()
+    public void InitText()
     {
-        ts1.SetInputString(lyrics.GetLines(pageCnt, 0));
-        ts2.SetInputString(lyrics.GetLines(pageCnt, 1));
-        ts3.SetInputString(lyrics.GetLines(pageCnt, 2));
-        ts4.SetInputString(lyrics.GetLines(pageCnt, 3));
+        stringTextMesh1.text = "";
+        stringTextMesh2.text = "";
+        stringTextMesh3.text = "";
+        stringTextMesh4.text = "";
+        alphabetTextMesh.text = "";
+    }
+    
+    /// <summary>
+     /// タイピング文字列の設定
+     /// <paramref name="page"/>
+     /// </summary>
+    public void UpdateText(int page)
+    {
+        ts1.SetInputString(lyrics.GetLines(page, 0));
+        ts2.SetInputString(lyrics.GetLines(page, 1));
+        ts3.SetInputString(lyrics.GetLines(page, 2));
+        ts4.SetInputString(lyrics.GetLines(page, 3));
         stringTextMesh1.text = ts1.GetRestString();
         stringTextMesh2.text = ts2.GetRestString();
         stringTextMesh3.text = ts3.GetRestString();
@@ -134,6 +163,10 @@ public class TypingObject : MonoBehaviour {
                 {
                     stringTextMesh4.text = "<color=red>" + ts4.GetInputedString() + "</color>" + ts4.GetRestString();
                     alphabetTextMesh.text = "<color=red>" + ts4.GetInputedKey() + "</color>" + ts4.GetRestKey();
+                    if (ts4.isEnded())
+                    {
+                        alphabetTextMesh.text = "";
+                    }
                 }
                 else
                 {

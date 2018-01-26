@@ -6,7 +6,7 @@ using UnityEngine;
 public class Lyrics : MonoBehaviour {
 
     //public TextAsset resouce;
-    private LyricsModel lirycs;
+    private LyricsModel lyrics;
 
     // Use this for initialization
     void Start () {
@@ -33,7 +33,7 @@ public class Lyrics : MonoBehaviour {
         // 楽曲Noの歌詞XMLファイルを読み込み
         // TODO: サーバー側にするとしたらパス指定はやりたくないかも…リソースでやりたい
         XmlAccess xml = new XmlAccess(typeof(LyricsModel));
-        lirycs = (LyricsModel)xml.xmlRead("Assets/Lyrics/001.xml");
+        lyrics = (LyricsModel)xml.xmlRead("Assets/Lyrics/001.xml");
         Debug.Log("XMLパースOK！");
     }
 
@@ -44,7 +44,7 @@ public class Lyrics : MonoBehaviour {
     /// </summary>
     public void UnloadLyrics()
     {
-        lirycs = null;
+        lyrics = null;
     }
 
     /// <summary>
@@ -54,13 +54,22 @@ public class Lyrics : MonoBehaviour {
     /// <returns></returns>
     public string GetStartTime(int page)
     {
-        if (page > lirycs.pages.Count)
+        if (page > lyrics.pages.Count)
         {
             return "0";
         }
-        return lirycs.pages[page].startTIme;
+        return lyrics.pages[page].startTime;
     }
 
+    /// <summary>
+    /// MAXページ数の取得
+    /// </summary>
+    /// <param name=""></param>
+    /// <returns>maxpage</returns>
+    public int GetMaxPage()
+    {
+        return lyrics.pages.Count;
+    }
 
     /// <summary>
     /// 歌詞データの取得
@@ -68,15 +77,15 @@ public class Lyrics : MonoBehaviour {
     /// <returns></returns>
     public string GetLines(int page, int line)
     {
-        if (page > lirycs.pages.Count)
+        if (page > lyrics.pages.Count)
         {
             return "終了だよ！";
         }
-        if (line > lirycs.pages[page].lines.Count)
+        if (line > lyrics.pages[page].lines.Count)
         {
             return "";
         }
 
-        return lirycs.pages[page].lines[line].lyric;
+        return lyrics.pages[page].lines[line].lyric;
     }
 }

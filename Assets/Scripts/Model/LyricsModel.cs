@@ -10,7 +10,7 @@ public class LyricsModel
 public class Page
 {
     public int seq { get; set; }
-    public string startTIme { get; set; }
+    public string startTime { get; set; }
     public List<Line> lines { get; set; }
 }
 
