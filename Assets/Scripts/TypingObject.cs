@@ -42,10 +42,11 @@ public class TypingObject : MonoBehaviour {
 
     /// <summary>
     /// 歌詞データ読み込み
+    /// <paramref name="num"/>
     /// </summary>
-    public void GetLirycs()
+    public void GetLirycs(string num)
     {
-        lyrics.LoadLyrics();
+        lyrics.LoadLyrics(num);
     }
 
     /// <summary>

@@ -20,9 +20,9 @@ public class MusicObject : MonoBehaviour {
     /// <summary>
     /// 曲スタート
     /// </summary>
-    public void StartMusic ()
+    public void StartMusic (string num)
     {
-        audioClip = (AudioClip)Resources.Load("001");
+        audioClip = (AudioClip)Resources.Load(num);
         audioSource.PlayOneShot(audioClip);
     }
 

@@ -20,15 +20,15 @@ public class Lyrics : MonoBehaviour {
 
     /// <summary>
     /// 歌詞データのロード
-    /// <param name=""></param>
+    /// <param name="num"></param>
     /// <return></return>
     /// </summary>
-    public void LoadLyrics()
+    public void LoadLyrics(string num)
     {
         // リストで指定された楽曲Noを取得
         StringBuilder path = new StringBuilder(Application.dataPath);
         path.Append("/Lyrics/");
-        path.Append("001");
+        path.Append(num);
         path.Append(".xml");
 
         // 楽曲Noの歌詞XMLファイルを読み込み

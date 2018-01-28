@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerObject : MonoBehaviour {
 
     public TypingObject typeObj;
+    public sldTimelim slider;
     private bool started;
+    public InputField iptNum;
 
     // Use this for initialization
     void Start () {
-        typeObj.GetLirycs();
         started = false;
     }
 
@@ -27,6 +29,7 @@ public class TimerObject : MonoBehaviour {
     /// </summary>
     public void StartTimer()
     {
+        typeObj.GetLirycs(iptNum.text);
         typeObj.InitText();
         StartCoroutine("Coroutine");
         started = true;
@@ -39,6 +42,8 @@ public class TimerObject : MonoBehaviour {
     {
         StopCoroutine("Coroutine");
         typeObj.CancelTyping();
+        slider.InitVal();
+        slider.roop = false;
         started = false;
     }
 
@@ -51,9 +56,17 @@ public class TimerObject : MonoBehaviour {
         for (int i = 0; i <= typeObj.GetMaxPage() - 1; ++i)
         {
             // インターバルを取得し、時間が来るまでWait
-            string milisec = typeObj.GetInterval(i);
-            yield return new WaitForSeconds(float.Parse(milisec));
+            yield return new WaitForSeconds(float.Parse(typeObj.GetInterval(i)));
+            // 時間が来たらページ遷移
+            // 1. テキストをアップデート
             typeObj.UpdateText(i);
+            // 2. 時間スライダーの表示を初期化
+            slider.InitVal();
+            if (i < typeObj.GetMaxPage())
+            {
+                slider.countTime = float.Parse(typeObj.GetInterval(i + 1));
+                slider.roop = true;
+            }
         }
             
     }

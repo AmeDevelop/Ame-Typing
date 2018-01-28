@@ -8,6 +8,7 @@ public class btnPlay : MonoBehaviour {
     public TimerObject timeObj;
     public MusicObject musicObj;
     private Toggle btn_play;
+    public InputField iptNum;
 
     // Use this for initialization
     void Start () {
@@ -29,8 +30,8 @@ public class btnPlay : MonoBehaviour {
         if (btn_play.isOn)
         {
             Debug.Log("Play started:");
-            musicObj.StartMusic();
             timeObj.StartTimer();
+            musicObj.StartMusic(iptNum.text);
         }
         else
         {
