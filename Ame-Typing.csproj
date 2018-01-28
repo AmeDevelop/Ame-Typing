@@ -299,7 +299,9 @@
     <None Include="Assets\Lyrics\001.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Assets\Lyrics\002.xml" />
+    <None Include="Assets\Lyrics\002.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Lyrics\dictionary.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

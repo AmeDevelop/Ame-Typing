@@ -926,7 +926,109 @@ public class TypingSystem {
 		case "ー":
 			tips.Add(new PatternTip("-"));
 			break;
-		default:
+        // ADD
+        case "A":
+        case "a":
+            tips.Add(new PatternTip("a"));
+            break;
+        case "B":
+        case "b":
+            tips.Add(new PatternTip("b"));
+                break;
+        case "C":
+        case "c":
+            tips.Add(new PatternTip("c"));
+            break;
+        case "D":
+        case "d":
+            tips.Add(new PatternTip("d"));
+            break;
+        case "E":
+        case "e":
+            tips.Add(new PatternTip("e"));
+            break;
+        case "F":
+        case "f":
+            tips.Add(new PatternTip("f"));
+            break;
+        case "G":
+        case "g":
+            tips.Add(new PatternTip("g"));
+            break;
+        case "H":
+        case "h":
+            tips.Add(new PatternTip("h"));
+            break;
+        case "I":
+        case "i":
+            tips.Add(new PatternTip("i"));
+            break;
+        case "J":
+        case "j":
+            tips.Add(new PatternTip("j"));
+            break;
+        case "K":
+        case "k":
+            tips.Add(new PatternTip("k"));
+            break;
+        case "L":
+        case "l":
+            tips.Add(new PatternTip("l"));
+            break;
+        case "M":
+        case "m":
+            tips.Add(new PatternTip("m"));
+            break;
+        case "O":
+        case "o":
+            tips.Add(new PatternTip("o"));
+            break;
+        case "P":
+        case "p":
+            tips.Add(new PatternTip("p"));
+            break;
+        case "Q":
+        case "q":
+            tips.Add(new PatternTip("q"));
+            break;
+        case "R":
+        case "r":
+            tips.Add(new PatternTip("r"));
+            break;
+        case "S":
+        case "s":
+            tips.Add(new PatternTip("s"));
+            break;
+        case "T":
+        case "t":
+            tips.Add(new PatternTip("t"));
+            break;
+        case "U":
+        case "u":
+            tips.Add(new PatternTip("u"));
+            break;
+        case "V":
+        case "v":
+            tips.Add(new PatternTip("v"));
+            break;
+        case "W":
+        case "w":
+            tips.Add(new PatternTip("w"));
+            break;
+        case "X":
+        case "x":
+            tips.Add(new PatternTip("x"));
+            break;
+        case "Y":
+        case "y":
+            tips.Add(new PatternTip("y"));
+            break;
+        case "Z":
+        case "z":
+            tips.Add(new PatternTip("z"));
+            break;
+        // END
+        default:
 			if (s [0] == 'っ') {
 				List<PatternTip> nextTips = new List<PatternTip> ();
 				GetPatternTips (nextTips, s.Substring (1));

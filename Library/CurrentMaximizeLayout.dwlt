@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 571}
   m_MaxSize: {x: 18004, y: 18021}
   vertical: 0
-  controlID: 691
+  controlID: 1188
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 571}
   m_MaxSize: {x: 14002, y: 18021}
   vertical: 1
-  controlID: 692
+  controlID: 1189
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 471}
   m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 670
+  controlID: 1190
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 471}
   m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
-  controlID: 629
+  controlID: 1191
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,8 +191,8 @@ MonoBehaviour:
     y: 0
     width: 358
     height: 262
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -227,9 +227,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c4f5ffff
-    m_LastClickedID: -2620
-    m_ExpandedIDs: caf5ffff9efbffff00000000de2800000e290000
+    m_SelectedIDs: f6270000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 9efbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 262
     width: 358
     height: 277
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -316,18 +316,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Lyrics
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Lyrics
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\urank\Documents\Ame-Typing
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 72270000
-    m_LastClickedID: 10098
+    m_SelectedIDs: ba270000
+    m_LastClickedID: 10170
     m_ExpandedIDs: 000000007227000078270000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -381,8 +381,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c4f5ffff
-    m_LastClickedInstanceID: -2620
+    m_SelectedInstanceIDs: f6270000
+    m_LastClickedInstanceID: 10230
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000702900006c290000ac2d00009c2d0000a2270000e8270000ce270000e2280000deecfbff8c2700008e2f000000000000
     m_RenameOverlay:
@@ -673,8 +673,8 @@ MonoBehaviour:
     y: 0
     width: 320
     height: 771
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -707,7 +707,7 @@ MonoBehaviour:
     width: 318
     height: 750
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 143.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160

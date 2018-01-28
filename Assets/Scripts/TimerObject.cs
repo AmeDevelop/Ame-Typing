@@ -9,6 +9,7 @@ public class TimerObject : MonoBehaviour {
     public sldTimelim slider;
     private bool started;
     public InputField iptNum;
+    GameObject gameObj;
 
     // Use this for initialization
     void Start () {
@@ -53,21 +54,26 @@ public class TimerObject : MonoBehaviour {
     /// <returns></returns>
     private IEnumerator Coroutine( )
     {
-        for (int i = 0; i <= typeObj.GetMaxPage() - 1; ++i)
+        for (int i = 0; i < typeObj.GetMaxPage(); ++i)
         {
             // インターバルを取得し、時間が来るまでWait
             yield return new WaitForSeconds(float.Parse(typeObj.GetInterval(i)));
+            Debug.Log("Timer: " + "[roop=" + i + "] " + typeObj.GetInterval(i) + "sec");
+
             // 時間が来たらページ遷移
             // 1. テキストをアップデート
             typeObj.UpdateText(i);
             // 2. 時間スライダーの表示を初期化
             slider.InitVal();
-            if (i < typeObj.GetMaxPage())
+            if (i < typeObj.GetMaxPage() - 1)
             {
                 slider.countTime = float.Parse(typeObj.GetInterval(i + 1));
                 slider.roop = true;
             }
         }
-            
+
+        gameObj = GameObject.Find("btn_play");
+        Toggle btnPlay = gameObj.GetComponent<Toggle>();
+        btnPlay.isOn = false;
     }
 }
