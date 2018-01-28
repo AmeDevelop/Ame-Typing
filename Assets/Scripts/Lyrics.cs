@@ -26,14 +26,15 @@ public class Lyrics : MonoBehaviour {
     public void LoadLyrics()
     {
         // リストで指定された楽曲Noを取得
-        StringBuilder path = new StringBuilder("../../Lirycs/");
+        StringBuilder path = new StringBuilder(Application.dataPath);
+        path.Append("/Lyrics/");
         path.Append("001");
         path.Append(".xml");
 
         // 楽曲Noの歌詞XMLファイルを読み込み
         // TODO: サーバー側にするとしたらパス指定はやりたくないかも…リソースでやりたい
         XmlAccess xml = new XmlAccess(typeof(LyricsModel));
-        lyrics = (LyricsModel)xml.xmlRead("Assets/Lyrics/001.xml");
+        lyrics = (LyricsModel)xml.xmlRead(path.ToString());
         Debug.Log("XMLパースOK！");
     }
 

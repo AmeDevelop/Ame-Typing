@@ -123,17 +123,21 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     public void InitText()
     {
+        ts1.SetInputString("");
+        ts2.SetInputString("");
+        ts3.SetInputString("");
+        ts4.SetInputString("");
         stringTextMesh1.text = "";
         stringTextMesh2.text = "";
         stringTextMesh3.text = "";
         stringTextMesh4.text = "";
         alphabetTextMesh.text = "";
     }
-    
+
     /// <summary>
-     /// タイピング文字列の設定
-     /// <paramref name="page"/>
-     /// </summary>
+    /// タイピング文字列の設定
+    /// <paramref name="page"/>
+    /// </summary>
     public void UpdateText(int page)
     {
         ts1.SetInputString(lyrics.GetLines(page, 0));
