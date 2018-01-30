@@ -14,6 +14,7 @@ public class TypingObject : MonoBehaviour {
     private TypingSystem ts2;
     private TypingSystem ts3;
     private TypingSystem ts4;
+    private int targetLine;
 
     private string[] keys = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", };
     public Lyrics lyrics;
@@ -31,6 +32,7 @@ public class TypingObject : MonoBehaviour {
         ts2 = new TypingSystem();
         ts3 = new TypingSystem();
         ts4 = new TypingSystem();
+        targetLine = 0;
         //pageCnt = 0;
     }
 
@@ -81,6 +83,11 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     public void CancelTyping()
     {
+        stringTextMesh1.color = Color.white;
+        stringTextMesh2.color = Color.white;
+        stringTextMesh3.color = Color.white;
+        stringTextMesh4.color = Color.white;
+        alphabetTextMesh.color = Color.white;
         stringTextMesh1.text = "PRESS START !!";
         stringTextMesh2.text = "PRESS START !!";
         stringTextMesh3.text = "PRESS START !!";
@@ -96,27 +103,80 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     public void Control ()
     {
-        if (ts1.isEnded() && ts2.isEnded() && ts3.isEnded() && ts4.isEnded())
-        {
+        if (targetLine == 0 || targetLine > 4)
             return;
-        }
 
         foreach (string key in keys)
         {
             if (Input.GetKeyDown(key))
             {
-                if (ts1.InputKey(key) == 1 || ts2.InputKey(key) == 1 || ts3.InputKey(key) == 1 || ts4.InputKey(key) == 1)
+                switch (targetLine)
                 {
-                    setype.OKtype();
-                    UpdateText();
-                } else
-                {
-                    setype.NGtype();
+                    case 1:
+                        ControlUpdate(ts1, key, ts2);
+                        break;
+                    case 2:
+                        ControlUpdate(ts2, key, ts3);
+                        break;
+                    case 3:
+                        ControlUpdate(ts3, key, ts4);
+                        break;
+                    case 4:
+                        ControlUpdate(ts4, key);
+                        break;
+                    default:
+                        Debug.Log("ERROR: " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        break;
                 }
-                break;
             }
         }
-   }
+    }
+
+    /// <summary>
+    /// 音や画面のアップデート制御
+    /// </summary>
+    /// <param name="ts"></param>
+    /// <param name="key"></param>
+    void ControlUpdate(TypingSystem ts, string key, TypingSystem nextts = null)
+    {
+        bool comb = false;
+
+        if (ts.InputKey(key) == 1 )
+        {
+            setype.OKtype();
+            // スペース判定
+            if (ts.GetRestString().Length > 0 && ts.GetRestString()[0] == ' ')
+            {
+                ts.RemoveSpace();
+                comb = true;
+            }
+            UpdateText();
+        }
+        else
+        {
+            setype.NGtype();
+        }
+
+        if (ts.isEnded())
+        {
+            if (nextts != null && nextts.GetInputString().Length == 0)
+            {
+                targetLine = 5;
+            }
+            else
+            {
+                ++targetLine;
+            }
+            comb = true;
+        }
+
+        if (comb)
+        {
+            // コンボサウンドを鳴らす
+            setype.Combo();
+        }
+
+    }
 
 
     /// <summary>
@@ -133,6 +193,12 @@ public class TypingObject : MonoBehaviour {
         stringTextMesh3.text = "";
         stringTextMesh4.text = "";
         alphabetTextMesh.text = "";
+        stringTextMesh1.color = Color.red;
+        stringTextMesh2.color = Color.red;
+        stringTextMesh3.color = Color.red;
+        stringTextMesh4.color = Color.red;
+        alphabetTextMesh.color = Color.red;
+        targetLine = 0;
     }
 
     /// <summary>
@@ -150,6 +216,7 @@ public class TypingObject : MonoBehaviour {
         stringTextMesh3.text = ts3.GetRestString();
         stringTextMesh4.text = ts4.GetRestString();
         alphabetTextMesh.text = ts1.GetRestKey();
+        if (ts1.GetInputString().Length != 0) targetLine = 1;
     }
 
     /// <summary>
@@ -157,35 +224,35 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     void UpdateText()
     {
-        stringTextMesh1.text = "<color=red>" + ts1.GetInputedString() + "</color>" + ts1.GetRestString();
-        if (ts1.isEnded())
+        stringTextMesh1.text = "<color=#666666>" + ts1.GetInputedString() + "</color>" + ts1.GetRestString();
+        if (targetLine > 1)
         {
-            stringTextMesh2.text = "<color=red>" + ts2.GetInputedString() + "</color>" + ts2.GetRestString();
-            if (ts2.isEnded())
+            stringTextMesh2.text = "<color=#666666>" + ts2.GetInputedString() + "</color>" + ts2.GetRestString();
+            if (targetLine > 2)
             {
-                stringTextMesh3.text = "<color=red>" + ts3.GetInputedString() + "</color>" + ts3.GetRestString();
-                if (ts3.isEnded())
+                stringTextMesh3.text = "<color=#666666>" + ts3.GetInputedString() + "</color>" + ts3.GetRestString();
+                if (targetLine > 3)
                 {
-                    stringTextMesh4.text = "<color=red>" + ts4.GetInputedString() + "</color>" + ts4.GetRestString();
-                    alphabetTextMesh.text = "<color=red>" + ts4.GetInputedKey() + "</color>" + ts4.GetRestKey();
-                    if (ts4.isEnded())
+                    stringTextMesh4.text = "<color=#666666>" + ts4.GetInputedString() + "</color>" + ts4.GetRestString();
+                    alphabetTextMesh.text = "<color=#666666>" + ts4.GetInputedKey() + "</color>" + ts4.GetRestKey();
+                    if (targetLine > 4)
                     {
                         alphabetTextMesh.text = "";
                     }
                 }
                 else
                 {
-                    alphabetTextMesh.text = "<color=red>" + ts3.GetInputedKey() + "</color>" + ts3.GetRestKey();
+                    alphabetTextMesh.text = "<color=#666666>" + ts3.GetInputedKey() + "</color>" + ts3.GetRestKey();
                 }
             }
             else
             {
-                alphabetTextMesh.text = "<color=red>" + ts2.GetInputedKey() + "</color>" + ts2.GetRestKey();
+                alphabetTextMesh.text = "<color=#666666>" + ts2.GetInputedKey() + "</color>" + ts2.GetRestKey();
             }
         }
         else
         {
-            alphabetTextMesh.text = "<color=red>" + ts1.GetInputedKey() + "</color>" + ts1.GetRestKey();
+            alphabetTextMesh.text = "<color=#666666>" + ts1.GetInputedKey() + "</color>" + ts1.GetRestKey();
         }
     }
 }

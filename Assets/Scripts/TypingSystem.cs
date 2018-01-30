@@ -21,8 +21,8 @@ public class TypingSystem {
 	//直前に入力成功したのが[ん]の２個目のnである
 	bool last_n_secondary;
 
-	//パターンチップのリスト
-	List<PatternTip> patternTips = new List<PatternTip> ();
+    //パターンチップのリスト
+    List<PatternTip> patternTips = new List<PatternTip> ();
 
 
 	//入力する文字列(ひらがなorカタカナ)をセットし初期化する.
@@ -31,7 +31,7 @@ public class TypingSystem {
 		RestString = StringToHiragana (s);
 		InputedKeys = "";
 		last_n_secondary = false;
-		patternTips.Clear ();
+        patternTips.Clear ();
 		UpdatePatternTips ();
 	}
 	//入力されたキーを引数に，判定を行う．
@@ -45,7 +45,7 @@ public class TypingSystem {
 		if (input.Length > 1)
 			input = input [0].ToString ();
 
-		if(input == "n" && InputedKeys.Length > 0 && last_n_secondary == false){
+        if (input == "n" && InputedKeys.Length > 0 && last_n_secondary == false){
 
 			if(InputedKeys[InputedKeys.Length - 1] == 'n' ){
 				bool canAddN = true;
@@ -183,7 +183,17 @@ public class TypingSystem {
 			return false;
 	}
 
-	void UpdatePatternTips(){
+    //残りの次の一文字を削除する(スペースコンボ対応)
+    public void RemoveSpace()
+    {
+        RestStringOrigin = RestStringOrigin.Substring(1);
+        RestString = RestString.Substring(1);
+        next = GetNextPattern(RestString);
+        patternTips.Clear();
+        GetPatternTips(patternTips, next);
+    }
+
+    void UpdatePatternTips(){
 		next = GetNextPattern (RestString);
 		GetPatternTips (patternTips, next);
 	}
@@ -193,64 +203,159 @@ public class TypingSystem {
 			return "";
 		}
 		char head = s [0];
-		if (head == 'ん') {
-			if (s.Length > 1) {
-				char n = s [1];
-				if (n == 'あ' || n == 'い' || n == 'う' || n == 'え' || n == 'お' || n == 'や' || n == 'ゆ' || n == 'よ' ||
-					n == 'な' || n == 'に' || n == 'ぬ' || n == 'ね' || n == 'の' || n == 'ん') {
-					return head + GetNextPattern (s.Substring (1));
-				} else
-					return s.Substring(0, 1);
-			} else
-				return ".";
-		} else if (head == 'し' || head == 'ち' || head == 'き' || head == 'ぎ' || head == 'ぢ' || head == 'じ' ||
-				head == 'に' || head == 'ひ' || head == 'び' || head == 'ぴ' || head == 'み' || head == 'り' ||
-				head == 'て' || head == 'で') {
-			if (s.Length > 1) {
-				char n = s [1];
-				if (n == 'ゃ' || n == 'ぃ' || n == 'ゅ' || n == 'ょ' || n == 'ぇ') {
-					return s.Substring (0, 2);
-				} else
-					return head.ToString();
-			} else
-				return head.ToString();
-		} else if (head == 'ふ') {
-			if (s.Length > 1) {
-				char n = s [1];
-				if (n == 'ぁ' || n == 'ぃ' || n == 'ぇ' || n == 'ぉ' || n == 'ゃ' || n == 'ゅ' || n == 'ょ') {
-					return s.Substring (0, 2);
-				} else
-					return head.ToString();
-			} else
-				return head.ToString();
-		} else if (head == 'っ') {
-			if (s.Length > 1) {
-				char n = s [1];
-				if (n == 'あ' || n == 'い' || n == 'う' || n == 'え' || n == 'お' || n == 'ん' || 
-				    n == 'な' || n == 'に' || n == 'ぬ' || n == 'ね' || n == 'の') {
-					return head.ToString();
-				} else
-					return head.ToString() + GetNextPattern (s.Substring (1));
-			}
-		} else if (head == 'い') {
-			if(s.Length > 1){
-				if( s[1] == 'ぇ'){
-					return s.Substring(0, 2);
-				}
-			}return head.ToString();
-		}else if (head == 'う' || head == 'ゔ' || head == 'ヴ') {
-			if(s.Length > 1){
-				char n = s [1];
-				if( s[1] == 'ぁ' || s[1] == 'ぃ' || s[1] == 'ぇ' || s[1] == 'ぉ'){
-					return s.Substring(0, 2);
-				}
-			}return head.ToString();
-		}else {
-			return head.ToString();
-		}
-		return "";
-	}
-	void GetPatternTips(List<PatternTip> tips, string s){
+        switch (head)
+        {
+            case 'ん':
+                if (s.Length > 1)
+                {
+                    char n = s[1];
+                    if (n == 'あ' || n == 'い' || n == 'う' || n == 'え' || n == 'お' || n == 'や' || n == 'ゆ' || n == 'よ' ||
+                        n == 'な' || n == 'に' || n == 'ぬ' || n == 'ね' || n == 'の' || n == 'ん')
+                    {
+                        return head + GetNextPattern(s.Substring(1));
+                    }
+                    else
+                        return s.Substring(0, 1);
+                }
+                else
+                    return ".";
+            case 'し':
+            case 'ち':
+            case 'き':
+            case 'ぎ':
+            case 'ぢ':
+            case 'じ':
+            case 'に':
+            case 'ひ':
+            case 'び':
+            case 'ぴ':
+            case 'み':
+            case 'り':
+            case 'て':
+            case 'で':
+                if (s.Length > 1)
+                {
+                    char n = s[1];
+                    if (n == 'ゃ' || n == 'ぃ' || n == 'ゅ' || n == 'ょ' || n == 'ぇ')
+                    {
+                        return s.Substring(0, 2);
+                    }
+                    else
+                        return head.ToString();
+                }
+                else
+                    return head.ToString();
+            case 'ふ':
+                if (s.Length > 1)
+                {
+                    char n = s[1];
+                    if (n == 'ぁ' || n == 'ぃ' || n == 'ぇ' || n == 'ぉ' || n == 'ゃ' || n == 'ゅ' || n == 'ょ')
+                    {
+                        return s.Substring(0, 2);
+                    }
+                    else
+                        return head.ToString();
+                }
+                else
+                    return head.ToString();
+            case 'っ':
+                if (s.Length > 1)
+                {
+                    char n = s[1];
+                    if (n == 'あ' || n == 'い' || n == 'う' || n == 'え' || n == 'お' || n == 'ん' ||
+                        n == 'な' || n == 'に' || n == 'ぬ' || n == 'ね' || n == 'の')
+                    {
+                        return head.ToString();
+                    }
+                    else
+                        return head.ToString() + GetNextPattern(s.Substring(1));
+                }
+                return "";
+            case 'い':
+                if (s.Length > 1)
+                {
+                    if (s[1] == 'ぇ')
+                    {
+                        return s.Substring(0, 2);
+                    }
+                }
+                return head.ToString();
+            case 'う':
+            case 'ゔ':
+            case 'ヴ':
+                if (s.Length > 1)
+                {
+                    char n = s[1];
+                    if (s[1] == 'ぁ' || s[1] == 'ぃ' || s[1] == 'ぇ' || s[1] == 'ぉ')
+                    {
+                        return s.Substring(0, 2);
+                    }
+                }
+                return head.ToString();
+            default:
+                return head.ToString();
+        }
+
+        #region ORIGINAL CODE
+        //      if (head == 'ん') {
+        //	if (s.Length > 1) {
+        //		char n = s [1];
+        //		if (n == 'あ' || n == 'い' || n == 'う' || n == 'え' || n == 'お' || n == 'や' || n == 'ゆ' || n == 'よ' ||
+        //			n == 'な' || n == 'に' || n == 'ぬ' || n == 'ね' || n == 'の' || n == 'ん') {
+        //			return head + GetNextPattern (s.Substring (1));
+        //		} else
+        //			return s.Substring(0, 1);
+        //	} else
+        //		return ".";
+        //} else if (head == 'し' || head == 'ち' || head == 'き' || head == 'ぎ' || head == 'ぢ' || head == 'じ' ||
+        //		head == 'に' || head == 'ひ' || head == 'び' || head == 'ぴ' || head == 'み' || head == 'り' ||
+        //		head == 'て' || head == 'で') {
+        //	if (s.Length > 1) {
+        //		char n = s [1];
+        //		if (n == 'ゃ' || n == 'ぃ' || n == 'ゅ' || n == 'ょ' || n == 'ぇ') {
+        //			return s.Substring (0, 2);
+        //		} else
+        //			return head.ToString();
+        //	} else
+        //		return head.ToString();
+        //} else if (head == 'ふ') {
+        //	if (s.Length > 1) {
+        //		char n = s [1];
+        //		if (n == 'ぁ' || n == 'ぃ' || n == 'ぇ' || n == 'ぉ' || n == 'ゃ' || n == 'ゅ' || n == 'ょ') {
+        //			return s.Substring (0, 2);
+        //		} else
+        //			return head.ToString();
+        //	} else
+        //		return head.ToString();
+        //} else if (head == 'っ') {
+        //	if (s.Length > 1) {
+        //		char n = s [1];
+        //		if (n == 'あ' || n == 'い' || n == 'う' || n == 'え' || n == 'お' || n == 'ん' || 
+        //		    n == 'な' || n == 'に' || n == 'ぬ' || n == 'ね' || n == 'の') {
+        //			return head.ToString();
+        //		} else
+        //			return head.ToString() + GetNextPattern (s.Substring (1));
+        //	}
+        //} else if (head == 'い') {
+        //	if(s.Length > 1){
+        //		if( s[1] == 'ぇ'){
+        //			return s.Substring(0, 2);
+        //		}
+        //	}return head.ToString();
+        //}else if (head == 'う' || head == 'ゔ' || head == 'ヴ') {
+        //	if(s.Length > 1){
+        //		char n = s [1];
+        //		if( s[1] == 'ぁ' || s[1] == 'ぃ' || s[1] == 'ぇ' || s[1] == 'ぉ'){
+        //			return s.Substring(0, 2);
+        //		}
+        //	}return head.ToString();
+        //}else {
+        //	return head.ToString();
+        //}
+        //return "";
+        #endregion ORIGINAL CODE
+    }
+    void GetPatternTips(List<PatternTip> tips, string s){
 		if (s.Length <= 0)
 			return;
 		switch (s) {
@@ -501,12 +606,13 @@ public class TypingSystem {
 			break;
 		case "ん":
 			tips.Add(new PatternTip("n"));
-			break;
+            tips.Add(new PatternTip("xn"));
+                break;
 		case ".":
 			tips.Add(new PatternTip("nn"));
             tips.Add(new PatternTip("xn"));
                 break;
-		case "ぁ":
+        case "ぁ":
 			tips.Add(new PatternTip("xa"));
 			tips.Add(new PatternTip("la"));
 			break;
@@ -1041,7 +1147,9 @@ public class TypingSystem {
 				tips.Add (new PatternTip ("ltsu", s.Substring (1)));
 			} else if (s [0] == 'ん') {
 				tips.Add (new PatternTip ("nn", s.Substring (1)));
-			} else {
+                tips.Add(new PatternTip("xn", s.Substring(1)));
+                }
+                else {
 				tips.Add (new PatternTip (s));
 			}
 			break;
