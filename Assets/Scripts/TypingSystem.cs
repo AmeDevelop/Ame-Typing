@@ -270,7 +270,8 @@ public class TypingSystem {
                     else
                         return head.ToString() + GetNextPattern(s.Substring(1));
                 }
-                return "";
+                //return "";
+                return head.ToString();
             case 'い':
                 if (s.Length > 1)
                 {
@@ -1084,6 +1085,10 @@ public class TypingSystem {
         case "M":
         case "m":
             tips.Add(new PatternTip("m"));
+            break;
+        case "N":
+        case "n":
+            tips.Add(new PatternTip("n"));
             break;
         case "O":
         case "o":

@@ -17,10 +17,7 @@ public class btnPlay : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //if (btn_play.isOn)
-        //{
-        //    timeObj.Typing();
-        // }
+
     }
 
 
@@ -30,6 +27,7 @@ public class btnPlay : MonoBehaviour {
         if (btn_play.isOn)
         {
             Debug.Log("Play started:");
+            timeObj.Prepare();
             timeObj.StartTimer();
             musicObj.StartMusic(iptNum.text);
         }
