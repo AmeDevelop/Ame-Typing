@@ -28,8 +28,8 @@ public class btnPlay : MonoBehaviour {
         {
             Debug.Log("Play started:");
             timeObj.Prepare();
-            timeObj.StartTimer();
             musicObj.StartMusic(iptNum.text);
+            timeObj.StartTimer();
         }
         else
         {

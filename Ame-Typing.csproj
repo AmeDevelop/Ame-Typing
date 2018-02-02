@@ -289,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\btnPlay.cs" />
+    <Compile Include="Assets\Scripts\GameInitial.cs" />
     <Compile Include="Assets\Scripts\Lyrics.cs" />
     <Compile Include="Assets\Scripts\Model\LyricsModel.cs" />
     <Compile Include="Assets\Scripts\MusicObject.cs" />
@@ -337,6 +338,7 @@
     <None Include="Assets\Lyrics\003.xml" />
     <None Include="Assets\Lyrics\004.xml" />
     <None Include="Assets\Lyrics\005.xml" />
+    <None Include="Assets\Lyrics\006.xml" />
     <None Include="Assets\Lyrics\500.xml" />
     <None Include="Assets\Lyrics\dictionary.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
