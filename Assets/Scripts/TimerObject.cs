@@ -8,7 +8,6 @@ public class TimerObject : MonoBehaviour {
     public TypingObject typeObj;
     public sldTimelim slider;
     private bool started;
-    public InputField iptNum;
     GameObject gameObj;
 
     // Use this for initialization
@@ -28,9 +27,9 @@ public class TimerObject : MonoBehaviour {
     /// <summary>
     /// タイマー開始準備
     /// </summary>
-    public void Prepare()
+    public void Prepare(string num)
     {
-        typeObj.GetLirycs(iptNum.text);
+        typeObj.GetLirycs(num);
         typeObj.InitText();
     }
 
@@ -48,6 +47,7 @@ public class TimerObject : MonoBehaviour {
     /// </summary>
     public void CancelTimer()
     {
+        StopCoroutine(SwitchPage(0));
         StopCoroutine("Coroutine");
         typeObj.CancelTyping();
         slider.InitVal();
@@ -67,40 +67,32 @@ public class TimerObject : MonoBehaviour {
             float interval = float.Parse(typeObj.GetInterval(i));
             yield return new WaitForSeconds(interval);
 
-            //// Pefectのタイマー設定
-            ////slider.ChangeColor(1);
-            //yield return new WaitForSeconds(interval * JudgeRatio.PF_RATIO);
-
-            //// Greatのタイマー設定
-            ////slider.ChangeColor(2);
-            //yield return new WaitForSeconds(interval * JudgeRatio.GR_RATIO);
-
-            //// Goodのタイマー設定
-            ////slider.ChangeColor(3);
-            //yield return new WaitForSeconds(interval * JudgeRatio.GD_RATIO);
-
-            //// OKのタイマー設定
-            ////slider.ChangeColor(4);
-            //yield return new WaitForSeconds(interval * JudgeRatio.OK_RATIO);
-
-            //// Badのタイマー設定
-            ////slider.ChangeColor(5);
-            //yield return new WaitForSeconds(interval * JudgeRatio.BD_RATIO);
-
-            // 時間が来たらページ遷移
-            // 1. テキストをアップデート
-            typeObj.UpdateText(i);
-            // 2. 時間スライダーの表示を初期化
-            slider.InitVal();
-            if (i < typeObj.GetMaxPage() - 1)
-            {
-                slider.countTime = float.Parse(typeObj.GetInterval(i + 1));
-                slider.roop = true;
-            }
+            // ページ遷移
+            StartCoroutine(SwitchPage(i));
         }
 
         gameObj = GameObject.Find("btn_play");
         Toggle btnPlay = gameObj.GetComponent<Toggle>();
         btnPlay.isOn = false;
+    }
+
+    /// <summary>
+    /// ページ遷移
+    /// </summary>
+    /// <param name="i"></param>
+    /// <returns></returns>
+    private IEnumerator SwitchPage(int i)
+    {
+        // 時間が来たらページ遷移
+        // 1. テキストをアップデート
+        typeObj.UpdateText(i);
+        // 2. 時間スライダーの表示を初期化
+        slider.InitVal();
+        if (i < typeObj.GetMaxPage() - 1)
+        {
+            slider.countTime = float.Parse(typeObj.GetInterval(i + 1));
+            slider.roop = true;
+        }
+        yield break;
     }
 }

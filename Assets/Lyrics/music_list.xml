@@ -1,0 +1,60 @@
+<MusicListModel>
+  <music>
+    <Music>
+      <id>001</id>
+      <title>メルト</title>
+      <artist>ryo</artist>
+      <level>3</level>
+      <url>http://www.nicovideo.jp/watch/sm1715919</url>
+      <time>04:16</time>
+    </Music>
+    <Music>
+      <id>002</id>
+      <title>ダブルラリアット</title>
+      <artist>アゴアニキ</artist>
+      <level>3</level>
+      <url>http://www.nicovideo.jp/watch/nm6049209</url>
+      <time>03:26</time>
+    </Music>
+    <Music>
+      <id>003</id>
+      <title>ワールドイズマイン</title>
+      <artist>ryo</artist>
+      <level>4</level>
+      <url>http://www.nicovideo.jp/watch/sm3504435</url>
+      <time>04:13</time>
+    </Music>
+    <Music>
+      <id>004</id>
+      <title>キリトリセン</title>
+      <artist>40メートルP</artist>
+      <level>3</level>
+      <url>http://www.nicovideo.jp/watch/sm13715524</url>
+      <time>03:54</time>
+    </Music>
+    <Music>
+      <id>005</id>
+      <title>サンドリヨン (Cendrillon)</title>
+      <artist>シグナルP</artist>
+      <level>4</level>
+      <url>http://www.nicovideo.jp/watch/sm4410647</url>
+      <time>04:33</time>
+    </Music>
+    <Music>
+      <id>006</id>
+      <title>ポーカーフェイス</title>
+      <artist>ゆちゃP</artist>
+      <level>5</level>
+      <url>http://www.nicovideo.jp/watch/sm12894209</url>
+      <time>04:16</time>
+    </Music>
+    <Music>
+      <id>007</id>
+      <title>Two Kids</title>
+      <artist>THE DLX</artist>
+      <level>6</level>
+      <url>http://www.thedlx.net/</url>
+      <time>03:31</time>
+    </Music>
+  </music>
+</MusicListModel>

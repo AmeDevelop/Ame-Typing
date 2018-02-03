@@ -270,7 +270,6 @@ public class TypingSystem {
                     else
                         return head.ToString() + GetNextPattern(s.Substring(1));
                 }
-                //return "";
                 return head.ToString();
             case 'い':
                 if (s.Length > 1)
