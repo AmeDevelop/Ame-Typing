@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 571}
   m_MaxSize: {x: 18008, y: 18021}
   vertical: 0
-  controlID: 37667
+  controlID: 15790
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 571}
   m_MaxSize: {x: 14006, y: 18021}
   vertical: 1
-  controlID: 37668
+  controlID: 15791
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 471}
   m_MaxSize: {x: 14006, y: 14021}
   vertical: 0
-  controlID: 37646
+  controlID: 15677
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 471}
   m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
-  controlID: 37569
+  controlID: 15701
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -415,10 +415,10 @@ MonoBehaviour:
     height: 220
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 180}
-    m_SelectedIDs: 4aa6fcff
-    m_LastClickedID: -219574
-    m_ExpandedIDs: d00cf2ff2c0ff5ff826bf5ff846bf5ff0ec3f5ff2c7af6fff6a5fcfffca5fcff08a6fcff4aa6fcffc6cefdffcccefdffd8cefdffdecefdfffecefdff1acffdff0622feffcc43feff2851feffe653feffa456feff28e4feff3ae4feffd247ffff12ceffff62f5ffff00000000542e0000782e0000d82e0000fa3a0000023b0000543b0000643b0000c43b0000243c0000
+    scrollPos: {x: 0, y: 133}
+    m_SelectedIDs: 488e0000
+    m_LastClickedID: 36424
+    m_ExpandedIDs: 2cbff8fffcbff8ff6cc2f8ff8ad5f8ff56d6f8ffbcd8f8ffea36f9ff0443faff0a43faff5664faff5c64faff0c8ffaff6a19fcff7e58fcff94b4feff9ab4feffa6b4feffe2b4feffe8b4feff9efbffff000000008a2d00009a2d0000c82d0000e82d0000162e00001e2e0000262e00002e2e0000ae2e0000d22e0000dc2e0000e42e0000042f0000402f0000b28d0000d08d0000d88d0000168e0000288e0000568e00009a8e0000008f0000528f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -480,19 +480,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Lyrics
+    - Assets/Scripts/Util
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Lyrics
+  - Assets/Scripts/Util
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\urank\Documents\Ame-Typing
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 342c0000
-    m_LastClickedID: 11316
-    m_ExpandedIDs: 000000005a2b00007a2b00008e2c0000de370000ec370000ee37000040460000584600007c460000ffffff7f
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 882a0000
+    m_LastClickedID: 10888
+    m_ExpandedIDs: 000000007629000090290000aa290000b8290000ec2a0000302b0000f62b0000982f00009a2f00009c2f0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -520,7 +520,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005a2b00007a2b00008e2c0000de370000ec370000ee37000040460000584600007c460000ffffff7f
+    m_ExpandedIDs: 000000007629000090290000aa290000b8290000ec2a0000302b0000f62b0000982f00009a2f00009c2f0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

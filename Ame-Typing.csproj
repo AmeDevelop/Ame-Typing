@@ -299,6 +299,7 @@
     <Compile Include="Assets\Scripts\TimerObject.cs" />
     <Compile Include="Assets\Scripts\TypingObject.cs" />
     <Compile Include="Assets\Scripts\TypingSystem.cs" />
+    <Compile Include="Assets\Scripts\Util\GameInitial.cs" />
     <Compile Include="Assets\Scripts\Util\XmlAccess.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
