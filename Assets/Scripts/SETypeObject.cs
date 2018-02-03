@@ -13,7 +13,7 @@ public class SETypeObject : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        audioClip_OK = (AudioClip)Resources.Load("se_tp_ok_01");
+        audioClip_OK = (AudioClip)Resources.Load("se_tp_ok_02");
         audioClip_NG = (AudioClip)Resources.Load("se_tp_ng");
         audioClip_COMB = (AudioClip)Resources.Load("se_cmb_gd");
     }

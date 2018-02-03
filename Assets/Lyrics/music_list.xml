@@ -56,5 +56,13 @@
       <url>http://www.thedlx.net/</url>
       <time>03:31</time>
     </Music>
+    <Music>
+      <id>008</id>
+      <title>裏表ラバーズ</title>
+      <artist>wowaka</artist>
+      <level>6</level>
+      <url>http://www.nicovideo.jp/watch/sm8082467</url>
+      <time>03:31</time>
+    </Music>
   </music>
 </MusicListModel>

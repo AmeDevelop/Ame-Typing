@@ -83,6 +83,7 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     public void CancelTyping()
     {
+        StopCoroutine("UpdateText");
         stringTextMesh1.color = Color.white;
         stringTextMesh2.color = Color.white;
         stringTextMesh3.color = Color.white;
@@ -150,7 +151,7 @@ public class TypingObject : MonoBehaviour {
                 ts.RemoveSpace();
                 comb = true;
             }
-            UpdateText();
+            StartCoroutine("UpdateText");
         }
         else
         {
@@ -205,7 +206,7 @@ public class TypingObject : MonoBehaviour {
     /// タイピング文字列の設定
     /// <paramref name="page"/>
     /// </summary>
-    public void UpdateText(int page)
+    public void SetText(int page)
     {
         ts1.SetInputString(lyrics.GetLines(page, 0));
         ts2.SetInputString(lyrics.GetLines(page, 1));
@@ -222,7 +223,7 @@ public class TypingObject : MonoBehaviour {
     /// <summary>
     /// タイピング文字列の更新
     /// </summary>
-    void UpdateText()
+    private IEnumerator UpdateText()
     {
         stringTextMesh1.text = "<color=#666666>" + ts1.GetInputedString() + "</color>" + ts1.GetRestString();
         if (targetLine > 1)
@@ -254,5 +255,6 @@ public class TypingObject : MonoBehaviour {
         {
             alphabetTextMesh.text = "<color=#666666>" + ts1.GetInputedKey() + "</color>" + ts1.GetRestKey();
         }
+        yield break;
     }
 }

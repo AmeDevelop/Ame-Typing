@@ -85,7 +85,7 @@ public class TimerObject : MonoBehaviour {
     {
         // 時間が来たらページ遷移
         // 1. テキストをアップデート
-        typeObj.UpdateText(i);
+        typeObj.SetText(i);
         // 2. 時間スライダーの表示を初期化
         slider.InitVal();
         if (i < typeObj.GetMaxPage() - 1)

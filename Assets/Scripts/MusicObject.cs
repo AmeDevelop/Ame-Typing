@@ -7,14 +7,17 @@ public class MusicObject : MonoBehaviour {
     public AudioSource audioSource;
     private AudioClip audioClip;
 
+    private bool started;
+
     // Use this for initialization
     void Start () {
-
+        started = false;
     }
 
     // Update is called once per frame
     void Update () {
-		
+        if (!started) return;
+
 	}
 
     /// <summary>
@@ -24,6 +27,7 @@ public class MusicObject : MonoBehaviour {
     {
         audioClip = (AudioClip)Resources.Load(num);
         audioSource.PlayOneShot(audioClip);
+        started = true;
     }
 
     /// <summary>
@@ -34,6 +38,7 @@ public class MusicObject : MonoBehaviour {
         audioSource.Stop();
         // TODO: Disposeの仕方がわからない…
         audioClip = null;
+        started = false;
     }
 
 }

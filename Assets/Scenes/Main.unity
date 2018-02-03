@@ -299,7 +299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 9.999985, y: -25}
+  m_AnchoredPosition: {x: 9.999985, y: -28}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35148322
@@ -644,7 +644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: -28}
+  m_AnchoredPosition: {x: 45, y: -25}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257908815
@@ -1327,7 +1327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -25}
+  m_AnchoredPosition: {x: 35, y: -28}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529260550
@@ -1913,7 +1913,7 @@ RectTransform:
   m_Children:
   - {fileID: 1473274423}
   m_Father: {fileID: 2069389818}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2032,7 +2032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 70, y: -15}
+  m_AnchoredPosition: {x: 70, y: -13}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918964455
@@ -2055,7 +2055,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 30b1cf838c61d0448b9ff694e65e706c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -3597,7 +3597,7 @@ RectTransform:
   - {fileID: 1444576553}
   - {fileID: 1774036284}
   m_Father: {fileID: 2069389818}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3624,6 +3624,7 @@ MonoBehaviour:
   - " 005: \u30B5\u30F3\u30C9\u30EA\u30E8\u30F3 (Cendrillon)"
   - " 006: \u30DD\u30FC\u30AB\u30FC\u30D5\u30A7\u30A4\u30B9"
   - ' 007: Two Kids'
+  - " 008: \u88CF\u8868\u30E9\u30D0\u30FC\u30BA"
   _scrollBarWidth: 20
   _itemsToDisplay: 4
 --- !u!114 &1592245857
@@ -4529,8 +4530,8 @@ RectTransform:
   - {fileID: 30076335}
   - {fileID: 1225712025}
   - {fileID: 159588946}
-  - {fileID: 665987427}
   - {fileID: 1592245855}
+  - {fileID: 665987427}
   - {fileID: 339231774}
   m_Father: {fileID: 1180426682}
   m_RootOrder: 3
