@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,15 +16,16 @@ public class MusicObject : MonoBehaviour {
     private GameObject gameObj;
     private int pageCnt;
     private int editPageCnt;
-    private float playTime;
+    //private float playTime;
     private float startSec;
     private int maxPage;
     private bool isSwitching;
     private bool isEditing;
+    private bool isPlaying;
 
     // Use this for initialization
     void Start () {
-        playTime = 0f;
+        //playTime = 0f;
         pageCnt = 0;
         editPageCnt = 0;
         startSec = 0f;
@@ -39,13 +41,15 @@ public class MusicObject : MonoBehaviour {
         if (!audioSource.isPlaying) return;
 
         // 時間計測開始
-        playTime += Time.deltaTime;
+        // playTime += Time.deltaTime;
+        // Debug.Log(audioSource.time);
 
         // 編集モードの場合は時間の計測
-        StartCoroutine(EditTiming(editPageCnt, playTime));
+        StartCoroutine(EditTiming(editPageCnt, audioSource.time));
 
         // 開始時間が来たらページ遷移をする
-        if (playTime >= startSec)
+        //if (playTime >= startSec)
+        if (audioSource.time >= startSec)
         {
             if (pageCnt < maxPage)
             {
@@ -81,15 +85,43 @@ public class MusicObject : MonoBehaviour {
     /// </summary>
     public void StartMusic (string num)
     {
-        playTime = 0f;
+        // playTime = 0f;
         pageCnt = 0;
         editPageCnt = 0;
         startSec = float.Parse(typeObj.GetStartTime(pageCnt));
         maxPage = typeObj.GetMaxPage();
         isSwitching = false;
         isEditing = false;
-        audioClip = (AudioClip)Resources.Load(num);
-        audioSource.PlayOneShot(audioClip);
+
+        // 音楽読み込み
+        StartCoroutine(StreamPlayAudioFile(num));
+        //audioClip = (AudioClip)Resources.Load(num);
+        //audioSource.PlayOneShot(audioClip);
+    }
+
+    /// <summary>
+    /// 音楽ファイルを非同期的に読み込み
+    /// </summary>
+    /// <param name="fileName">ファイル名
+    /// <returns></returns>
+    IEnumerator StreamPlayAudioFile(string num)
+    {
+        //ソース指定し音楽流す
+        StringBuilder path = new StringBuilder("file:///");
+        path.Append(Application.dataPath);
+        path.Append("/Music/");
+        path.Append(num);
+        path.Append(".ogg");
+
+
+        //音楽ファイルロード
+        using (WWW www = new WWW(path.ToString()))
+        {
+            //読み込み完了まで待機
+            yield return www;
+            audioSource.clip = www.GetAudioClip(true, true);
+            audioSource.Play();
+        }
     }
 
     /// <summary>
@@ -98,9 +130,10 @@ public class MusicObject : MonoBehaviour {
     public void CancelMusic ()
     {
         audioSource.Stop();
-        // TODO: Disposeの仕方がわからない…
-        audioClip = null;
-        playTime = 0f;
+        //// TODO: Disposeの仕方がわからない…
+        //audioClip = null;
+        StopCoroutine(StreamPlayAudioFile(""));
+        // playTime = 0f;
         pageCnt = 0;
         editPageCnt = 0;
         startSec = 0f;

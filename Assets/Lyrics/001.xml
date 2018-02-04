@@ -7,7 +7,7 @@
 <lines>
 <Line><num>1</num><lyric>あさめがさめて</lyric></Line>
 <Line><num>2</num><lyric>まっさきに</lyric></Line>
-<Line><num>3</num><lyric>おもいうかぶきみのこと</lyric></Line>
+<Line><num>3</num><lyric>おもいうかぶ</lyric></Line>
 <Line><num>4</num><lyric>きみのこと</lyric></Line>
 </lines>
 </Page>
@@ -237,7 +237,7 @@
 </lines>
 </Page>
 <Page>
-<seq>27</seq><startTime>256</startTime><interval>17.59</interval>
+<seq>27</seq><startTime>255.8</startTime><interval>17.39</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
