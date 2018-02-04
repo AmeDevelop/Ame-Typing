@@ -300,6 +300,7 @@
     <Compile Include="Assets\Scripts\TypingObject.cs" />
     <Compile Include="Assets\Scripts\TypingSystem.cs" />
     <Compile Include="Assets\Scripts\Util\GameInitial.cs" />
+    <Compile Include="Assets\Scripts\Util\MusicExtention.cs" />
     <Compile Include="Assets\Scripts\Util\XmlAccess.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -466,10 +467,13 @@
     <None Include="Assets\Lyrics\002.xml" />
     <None Include="Assets\Lyrics\003.xml" />
     <None Include="Assets\Lyrics\004.xml" />
+    <None Include="Assets\Lyrics\004_bk.xml" />
     <None Include="Assets\Lyrics\005.xml" />
     <None Include="Assets\Lyrics\006.xml" />
     <None Include="Assets\Lyrics\007.xml" />
     <None Include="Assets\Lyrics\008.xml" />
+    <None Include="Assets\Lyrics\008_bk.xml" />
+    <None Include="Assets\Lyrics\009.xml" />
     <None Include="Assets\Lyrics\dictionary.txt" />
     <None Include="Assets\Lyrics\music_list.xml" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />

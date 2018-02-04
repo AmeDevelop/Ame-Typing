@@ -19,7 +19,7 @@ public class TimerObject : MonoBehaviour {
     void Update () {
         if (started)
         {
-            typeObj.Control();
+            //typeObj.Control();
         }
 
     }
@@ -64,7 +64,7 @@ public class TimerObject : MonoBehaviour {
         for (int i = 0; i < typeObj.GetMaxPage(); ++i)
         {
             // インターバルを取得
-            float interval = float.Parse(typeObj.GetInterval(i));
+            float interval = float.Parse(typeObj.GetStartTime(i));
             yield return new WaitForSeconds(interval);
 
             // ページ遷移
@@ -90,7 +90,7 @@ public class TimerObject : MonoBehaviour {
         slider.InitVal();
         if (i < typeObj.GetMaxPage() - 1)
         {
-            slider.countTime = float.Parse(typeObj.GetInterval(i + 1));
+            slider.countTime = float.Parse(typeObj.GetStartTime(i + 1));
             slider.roop = true;
         }
         yield break;

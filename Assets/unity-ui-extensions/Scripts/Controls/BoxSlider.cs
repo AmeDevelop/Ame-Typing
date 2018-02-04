@@ -9,7 +9,7 @@ namespace UnityEngine.UI.Extensions
 {
     [RequireComponent(typeof(RectTransform))]
     [AddComponentMenu("UI/Extensions/BoxSlider")]
-    public class BoxSlider : Selectable, IDragHandler, IInitializePotentialDragHandler, ICanvasElement
+        public class BoxSlider : Selectable, IDragHandler, IInitializePotentialDragHandler, ICanvasElement
     {
         public enum Direction
         {

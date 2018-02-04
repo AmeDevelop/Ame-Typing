@@ -1,9 +1,9 @@
-<LyricsModel>
+﻿<LyricsModel>
 <title>Two Kids</title>
 <artist>THE DLX</artist>
 <pages>
 <Page>
-<seq>1</seq><startTime>9.14</startTime>
+<seq>1</seq><startTime>9.4</startTime><interval>9.4</interval>
 <lines>
 <Line><num>1</num><lyric>Was it easy</lyric></Line>
 <Line><num>2</num><lyric>walking away</lyric></Line>
@@ -12,7 +12,7 @@
 </lines>
 </Page>
 <Page>
-<seq>2</seq><startTime>9.68</startTime>
+<seq>2</seq><startTime>19</startTime><interval>9.6</interval>
 <lines>
 <Line><num>1</num><lyric>Were you scared</lyric></Line>
 <Line><num>2</num><lyric>to start all over</lyric></Line>
@@ -21,7 +21,7 @@
 </lines>
 </Page>
 <Page>
-<seq>3</seq><startTime>9.37</startTime>
+<seq>3</seq><startTime>28.5</startTime><interval>9.5</interval>
 <lines>
 <Line><num>1</num><lyric>Do you remember when all we had was us</lyric></Line>
 <Line><num>2</num><lyric>I thought that would always be enough</lyric></Line>
@@ -30,7 +30,7 @@
 </lines>
 </Page>
 <Page>
-<seq>4</seq><startTime>10.16</startTime>
+<seq>4</seq><startTime>38.8</startTime><interval>10.3</interval>
 <lines>
 <Line><num>1</num><lyric>Or were we just two kids</lyric></Line>
 <Line><num>2</num><lyric>with nothing else to do</lyric></Line>
@@ -39,7 +39,7 @@
 </lines>
 </Page>
 <Page>
-<seq>5</seq><startTime>4.82</startTime>
+<seq>5</seq><startTime>43.5</startTime><interval>4.7</interval>
 <lines>
 <Line><num>1</num><lyric>I Love You</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -48,7 +48,7 @@
 </lines>
 </Page>
 <Page>
-<seq>6</seq><startTime>4.56</startTime>
+<seq>6</seq><startTime>48.3</startTime><interval>4.8</interval>
 <lines>
 <Line><num>1</num><lyric>Swearing that days last forever</lyric></Line>
 <Line><num>2</num><lyric>Never thinking about the end</lyric></Line>
@@ -57,7 +57,7 @@
 </lines>
 </Page>
 <Page>
-<seq>7</seq><startTime>9.88</startTime>
+<seq>7</seq><startTime>57.61</startTime><interval>9.31</interval>
 <lines>
 <Line><num>1</num><lyric>Now I gotta see you</lyric></Line>
 <Line><num>2</num><lyric>all through town</lyric></Line>
@@ -66,7 +66,7 @@
 </lines>
 </Page>
 <Page>
-<seq>8</seq><startTime>9.71</startTime>
+<seq>8</seq><startTime>67.5</startTime><interval>9.89</interval>
 <lines>
 <Line><num>1</num><lyric>Does he know</lyric></Line>
 <Line><num>2</num><lyric>all your secrets</lyric></Line>
@@ -75,7 +75,7 @@
 </lines>
 </Page>
 <Page>
-<seq>9</seq><startTime>9.38</startTime>
+<seq>9</seq><startTime>77</startTime><interval>9.5</interval>
 <lines>
 <Line><num>1</num><lyric>Do you remember when all we had was us</lyric></Line>
 <Line><num>2</num><lyric>I thought that would always be enough</lyric></Line>
@@ -84,7 +84,7 @@
 </lines>
 </Page>
 <Page>
-<seq>10</seq><startTime>10.13</startTime>
+<seq>10</seq><startTime>86.9</startTime><interval>9.9</interval>
 <lines>
 <Line><num>1</num><lyric>Or were we just two kids</lyric></Line>
 <Line><num>2</num><lyric>with nothing else to do</lyric></Line>
@@ -93,7 +93,7 @@
 </lines>
 </Page>
 <Page>
-<seq>11</seq><startTime>4.91</startTime>
+<seq>11</seq><startTime>92</startTime><interval>5.1</interval>
 <lines>
 <Line><num>1</num><lyric>I Love You</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -102,7 +102,7 @@
 </lines>
 </Page>
 <Page>
-<seq>12</seq><startTime>4.52</startTime>
+<seq>12</seq><startTime>96.7</startTime><interval>4.7</interval>
 <lines>
 <Line><num>1</num><lyric>Swearing that days last forever</lyric></Line>
 <Line><num>2</num><lyric>Never thinking about the end</lyric></Line>
@@ -111,7 +111,7 @@
 </lines>
 </Page>
 <Page>
-<seq>13</seq><startTime>10.11</startTime>
+<seq>13</seq><startTime>106.7</startTime><interval>10</interval>
 <lines>
 <Line><num>1</num><lyric>But I knew my hearts in trouble</lyric></Line>
 <Line><num>2</num><lyric>When you were always out the door</lyric></Line>
@@ -120,7 +120,7 @@
 </lines>
 </Page>
 <Page>
-<seq>14</seq><startTime>9.71</startTime>
+<seq>14</seq><startTime>116.3</startTime><interval>9.6</interval>
 <lines>
 <Line><num>1</num><lyric>We set a spark in motion</lyric></Line>
 <Line><num>2</num><lyric>Could have been a flame</lyric></Line>
@@ -129,7 +129,7 @@
 </lines>
 </Page>
 <Page>
-<seq>15</seq><startTime>8.43</startTime>
+<seq>15</seq><startTime>124.7</startTime><interval>8.4</interval>
 <lines>
 <Line><num>1</num><lyric>Yea It could have been the real thing</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -138,7 +138,7 @@
 </lines>
 </Page>
 <Page>
-<seq>16</seq><startTime>4.92</startTime>
+<seq>16</seq><startTime>129.6</startTime><interval>4.9</interval>
 <lines>
 <Line><num>1</num><lyric>Yea It could have been the real thing</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -147,7 +147,7 @@
 </lines>
 </Page>
 <Page>
-<seq>17</seq><startTime>5.82</startTime>
+<seq>17</seq><startTime>135.5</startTime><interval>5.9</interval>
 <lines>
 <Line><num>1</num><lyric>And now weve got ghosts to remind us both</lyric></Line>
 <Line><num>2</num><lyric>How we How we came so close</lyric></Line>
@@ -156,7 +156,7 @@
 </lines>
 </Page>
 <Page>
-<seq>18</seq><startTime>10.91</startTime>
+<seq>18</seq><startTime>146.4</startTime><interval>10.9</interval>
 <lines>
 <Line><num>1</num><lyric>Or were we just two kids</lyric></Line>
 <Line><num>2</num><lyric>with nothing else to do</lyric></Line>
@@ -165,7 +165,7 @@
 </lines>
 </Page>
 <Page>
-<seq>19</seq><startTime>4.94</startTime>
+<seq>19</seq><startTime>151.4</startTime><interval>5</interval>
 <lines>
 <Line><num>1</num><lyric>I Love You</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -174,7 +174,7 @@
 </lines>
 </Page>
 <Page>
-<seq>20</seq><startTime>4.68</startTime>
+<seq>20</seq><startTime>156</startTime><interval>4.6</interval>
 <lines>
 <Line><num>1</num><lyric>Swearing that days last forever</lyric></Line>
 <Line><num>2</num><lyric>Never thinking about the end</lyric></Line>
@@ -183,7 +183,7 @@
 </lines>
 </Page>
 <Page>
-<seq>21</seq><startTime>9.92</startTime>
+<seq>21</seq><startTime>166</startTime><interval>10</interval>
 <lines>
 <Line><num>1</num><lyric>Or were we just two kids</lyric></Line>
 <Line><num>2</num><lyric>with nothing else to do</lyric></Line>
@@ -192,7 +192,7 @@
 </lines>
 </Page>
 <Page>
-<seq>22</seq><startTime>4.77</startTime>
+<seq>22</seq><startTime>170.7</startTime><interval>4.7</interval>
 <lines>
 <Line><num>1</num><lyric>I Love You</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -201,7 +201,7 @@
 </lines>
 </Page>
 <Page>
-<seq>23</seq><startTime>4.7</startTime>
+<seq>23</seq><startTime>175.3</startTime><interval>4.6</interval>
 <lines>
 <Line><num>1</num><lyric>Swearing that days last forever</lyric></Line>
 <Line><num>2</num><lyric>Never thinking about the end</lyric></Line>
@@ -210,7 +210,7 @@
 </lines>
 </Page>
 <Page>
-<seq>24</seq><startTime>9.99</startTime>
+<seq>24</seq><startTime>185.4</startTime><interval>10.1</interval>
 <lines>
 <Line><num>1</num><lyric>But I knew my hearts in trouble</lyric></Line>
 <Line><num>2</num><lyric>When you were always out the door</lyric></Line>
@@ -219,7 +219,7 @@
 </lines>
 </Page>
 <Page>
-<seq>25</seq><startTime>9.97</startTime>
+<seq>25</seq><startTime>195.3</startTime><interval>9.9</interval>
 <lines>
 <Line><num>1</num><lyric>We set a spark in motion</lyric></Line>
 <Line><num>2</num><lyric>Could have been a flame</lyric></Line>
@@ -228,7 +228,7 @@
 </lines>
 </Page>
 <Page>
-<seq>26</seq><startTime>8.9</startTime>
+<seq>26</seq><startTime>204.2</startTime><interval>8.9</interval>
 <lines>
 <Line><num>1</num><lyric>Yea It could have been the real thing</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -237,7 +237,7 @@
 </lines>
 </Page>
 <Page>
-<seq>27</seq><startTime>7.04</startTime>
+<seq>27</seq><startTime>211.07</startTime><interval>6.87</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>

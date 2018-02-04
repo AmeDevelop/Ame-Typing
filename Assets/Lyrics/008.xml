@@ -1,465 +1,1180 @@
-﻿<LyricsModel>
-<title>裏表ラバーズ</title>
-<artist>wowaka</artist>
-<pages>
-<Page>
-<seq>1</seq><startTime>19.42</startTime>
-<lines>
-<Line><num>1</num><lyric>いいことずくめの</lyric></Line>
-<Line><num>2</num><lyric>ゆめからさめた</lyric></Line>
-<Line><num>3</num><lyric>わたしの</lyric></Line>
-<Line><num>4</num><lyric>のうないかんきょうは</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>2</seq><startTime>2.98</startTime>
-<lines>
-<Line><num>1</num><lyric>ラブという</lyric></Line>
-<Line><num>2</num><lyric>えたいのしれないものに</lyric></Line>
-<Line><num>3</num><lyric>おかされてしまいまして</lyric></Line>
-<Line><num>4</num><lyric>それからは</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>3</seq><startTime>3.05</startTime>
-<lines>
-<Line><num>1</num><lyric>どうしようもなく</lyric></Line>
-<Line><num>2</num><lyric>ふたつにさけた</lyric></Line>
-<Line><num>3</num><lyric>しんないかんきょうを</lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>4</seq><startTime>3.01</startTime>
-<lines>
-<Line><num>1</num><lyric>せいぎょするだけの</lyric></Line>
-<Line><num>2</num><lyric>キャパシティなどが</lyric></Line>
-<Line><num>3</num><lyric>そんざいしている</lyric></Line>
-<Line><num>4</num><lyric>はずもないので</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>5</seq><startTime>3.08</startTime>
-<lines>
-<Line><num>1</num><lyric>あいまいな たいがいの</lyric></Line>
-<Line><num>2</num><lyric>イノセントな</lyric></Line>
-<Line><num>3</num><lyric>かんじょうろんをぶちまけた</lyric></Line>
-<Line><num>4</num><lyric>ことのはのなか</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>6</seq><startTime>5.98</startTime>
-<lines>
-<Line><num>1</num><lyric>どうにかこうにか</lyric></Line>
-<Line><num>2</num><lyric>げんざいちてんを</lyric></Line>
-<Line><num>3</num><lyric>かくにんする</lyric></Line>
-<Line><num>4</num><lyric>めだまをほしがっている</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>7</seq><startTime>5.62</startTime>
-<lines>
-<Line><num>1</num><lyric>せい</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>8</seq><startTime>0.45</startTime>
-<lines>
-<Line><num>1</num><lyric></lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>9</seq><startTime>12.04</startTime>
-<lines>
-<Line><num>1</num><lyric>どうしてずくめのまいにち</lyric></Line>
-<Line><num>2</num><lyric>そうして</lyric></Line>
-<Line><num>3</num><lyric>ああしてこうして</lyric></Line>
-<Line><num>4</num><lyric>サヨナラベイベー</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>10</seq><startTime>3.01</startTime>
-<lines>
-<Line><num>1</num><lyric>げんじつちょくしと</lyric></Line>
-<Line><num>2</num><lyric>げんじつとうひの</lyric></Line>
-<Line><num>3</num><lyric>ひょうりいったいな</lyric></Line>
-<Line><num>4</num><lyric>このしんぞう</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>11</seq><startTime>3.04</startTime>
-<lines>
-<Line><num>1</num><lyric>どこかにいいことないかな</lyric></Line>
-<Line><num>2</num><lyric>なんて</lyric></Line>
-<Line><num>3</num><lyric>うらがえしの</lyric></Line>
-<Line><num>4</num><lyric>じぶんにとうよ</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>12</seq><startTime>2.98</startTime>
-<lines>
-<Line><num>1</num><lyric>じもんじとう</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>13</seq><startTime>0.57</startTime>
-<lines>
-<Line><num>1</num><lyric>じもんたとう</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>14</seq><startTime>0.56</startTime>
-<lines>
-<Line><num>1</num><lyric>たもんじとうつれまわし</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>15</seq><startTime>1.13</startTime>
-<lines>
-<Line><num>1</num><lyric>ああああ</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>16</seq><startTime>0.55</startTime>
-<lines>
-<Line><num>1</num><lyric>ただほんのうてきに</lyric></Line>
-<Line><num>2</num><lyric>ふれちゃって</lyric></Line>
-<Line><num>3</num><lyric>でもいいたいことって</lyric></Line>
-<Line><num>4</num><lyric>ないんで</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>17</seq><startTime>3</startTime>
-<lines>
-<Line><num>1</num><lyric>いたいんで</lyric></Line>
-<Line><num>2</num><lyric>さわって</lyric></Line>
-<Line><num>3</num><lyric>あえいで</lyric></Line>
-<Line><num>4</num><lyric>てんにものぼれるきになって</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>18</seq><startTime>3.27</startTime>
-<lines>
-<Line><num>1</num><lyric>どうにもこうにも</lyric></Line>
-<Line><num>2</num><lyric>にっちもさっちも</lyric></Line>
-<Line><num>3</num><lyric>あっちもこっちも</lyric></Line>
-<Line><num>4</num><lyric>いますぐあちらへとびこんでいけ</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>19</seq><startTime>6.02</startTime>
-<lines>
-<Line><num>1</num><lyric>もーラブラブになっちゃってー</lyric></Line>
-<Line><num>2</num><lyric>おうかくまくつっぱっちゃってー</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>20</seq><startTime>3.02</startTime>
-<lines>
-<Line><num>1</num><lyric>きょうれつなあじにぶっとんでー</lyric></Line>
-<Line><num>2</num><lyric>とうしんだいのうらおもて</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>21</seq><startTime>3.03</startTime>
-<lines>
-<Line><num>1</num><lyric>きょうはくてきにしばっちゃってー</lyric></Line>
-<Line><num>2</num><lyric>もうまくのうえにはっちゃってー</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>22</seq><startTime>3.02</startTime>
-<lines>
-<Line><num>1</num><lyric>もーラブラブでいっちゃってよ</lyric></Line>
-<Line><num>2</num><lyric>あいたい たい ない</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>23</seq><startTime>3.01</startTime>
-<lines>
-<Line><num>1</num><lyric>ない</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>24</seq><startTime>0.31</startTime>
-<lines>
-<Line><num>1</num><lyric></lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>25</seq><startTime>17.8</startTime>
-<lines>
-<Line><num>1</num><lyric>やなことずくめの</lyric></Line>
-<Line><num>2</num><lyric>ゆめからさめた</lyric></Line>
-<Line><num>3</num><lyric>わたしの</lyric></Line>
-<Line><num>4</num><lyric>のうないかんきょうが</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>26</seq><startTime>3.03</startTime>
-<lines>
-<Line><num>1</num><lyric>ラブという</lyric></Line>
-<Line><num>2</num><lyric>えたいのしれないものに</lyric></Line>
-<Line><num>3</num><lyric>おかされてしまいまして</lyric></Line>
-<Line><num>4</num><lyric>それからは</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>27</seq><startTime>2.99</startTime>
-<lines>
-<Line><num>1</num><lyric>どうしようもなく</lyric></Line>
-<Line><num>2</num><lyric>ふたつにさけた</lyric></Line>
-<Line><num>3</num><lyric>しんないかんきょうを</lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>28</seq><startTime>3.02</startTime>
-<lines>
-<Line><num>1</num><lyric>せいぎょするための</lyric></Line>
-<Line><num>2</num><lyric>リミッターなどを</lyric></Line>
-<Line><num>3</num><lyric>かけるという</lyric></Line>
-<Line><num>4</num><lyric>わけにもいかないので</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>29</seq><startTime>3.05</startTime>
-<lines>
-<Line><num>1</num><lyric>たいがいは あいまいな</lyric></Line>
-<Line><num>2</num><lyric>イノセントな</lyric></Line>
-<Line><num>3</num><lyric>だいさいがいを</lyric></Line>
-<Line><num>4</num><lyric>ふりまいた エゴをはらませ</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>30</seq><startTime>6.01</startTime>
-<lines>
-<Line><num>1</num><lyric>どうにかこうにか</lyric></Line>
-<Line><num>2</num><lyric>げんざいちてんを</lyric></Line>
-<Line><num>3</num><lyric>かくにんしたことばを</lyric></Line>
-<Line><num>4</num><lyric>てにつかんだようだ</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>31</seq><startTime>6.05</startTime>
-<lines>
-<Line><num>1</num><lyric>どうしてずくめのまいにち</lyric></Line>
-<Line><num>2</num><lyric>そうして</lyric></Line>
-<Line><num>3</num><lyric>ああしてこうして</lyric></Line>
-<Line><num>4</num><lyric>サヨナラベイベー</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>32</seq><startTime>3.01</startTime>
-<lines>
-<Line><num>1</num><lyric>げんじつちょくしと</lyric></Line>
-<Line><num>2</num><lyric>げんじつとうひの</lyric></Line>
-<Line><num>3</num><lyric>ひょうりいったいな</lyric></Line>
-<Line><num>4</num><lyric>このしんぞう</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>33</seq><startTime>3.04</startTime>
-<lines>
-<Line><num>1</num><lyric>どこかにいいことないかな</lyric></Line>
-<Line><num>2</num><lyric>なんて</lyric></Line>
-<Line><num>3</num><lyric>うらがえしの</lyric></Line>
-<Line><num>4</num><lyric>じぶんにとうよ</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>34</seq><startTime>2.98</startTime>
-<lines>
-<Line><num>1</num><lyric>じもんじとう</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>35</seq><startTime>0.61</startTime>
-<lines>
-<Line><num>1</num><lyric>じもんたとう</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>36</seq><startTime>0.53</startTime>
-<lines>
-<Line><num>1</num><lyric>たもんじとうつれまわし</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>37</seq><startTime>1.13</startTime>
-<lines>
-<Line><num>1</num><lyric>ああああ</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>38</seq><startTime>0.58</startTime>
-<lines>
-<Line><num>1</num><lyric>ただほんのうてきに</lyric></Line>
-<Line><num>2</num><lyric>ふれちゃって</lyric></Line>
-<Line><num>3</num><lyric>でもいいたいことって</lyric></Line>
-<Line><num>4</num><lyric>ないんで</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>39</seq><startTime>3.03</startTime>
-<lines>
-<Line><num>1</num><lyric>いたいんで</lyric></Line>
-<Line><num>2</num><lyric>さわって</lyric></Line>
-<Line><num>3</num><lyric>あえいで</lyric></Line>
-<Line><num>4</num><lyric>てんにものぼれるきになって</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>40</seq><startTime>3.2</startTime>
-<lines>
-<Line><num>1</num><lyric>どうにもこうにも</lyric></Line>
-<Line><num>2</num><lyric>にっちもさっちも</lyric></Line>
-<Line><num>3</num><lyric>あっちもこっちも</lyric></Line>
-<Line><num>4</num><lyric>いますぐあちらへとびこめ</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>41</seq><startTime>6.41</startTime>
-<lines>
-<Line><num>1</num><lyric>もうもくてきにきらっちゃってー</lyric></Line>
-<Line><num>2</num><lyric>きょういくよていつくっちゃってー</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>42</seq><startTime>3.02</startTime>
-<lines>
-<Line><num>1</num><lyric>どうしてもっていわせちゃってー</lyric></Line>
-<Line><num>2</num><lyric>とうしんだいのうらをまて</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>43</seq><startTime>3.03</startTime>
-<lines>
-<Line><num>1</num><lyric>ちょうはつてきにさそっちゃってー</lyric></Line>
-<Line><num>2</num><lyric>しょうどうてきにうたっちゃってー</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>44</seq><startTime>3.03</startTime>
-<lines>
-<Line><num>1</num><lyric>もーラブラブでいっちゃってよ</lyric></Line>
-<Line><num>2</num><lyric>だいたい あい ない</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>45</seq><startTime>2.99</startTime>
-<lines>
-<Line><num>1</num><lyric>もーラブラブに</lyric></Line>
-<Line><num>2</num><lyric>なっちゃってー</lyric></Line>
-<Line><num>3</num><lyric>おうかくまく</lyric></Line>
-<Line><num>4</num><lyric>つっぱっちゃってー</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>46</seq><startTime>3.04</startTime>
-<lines>
-<Line><num>1</num><lyric>きょうれつなあじに</lyric></Line>
-<Line><num>2</num><lyric>ぶっとんでー</lyric></Line>
-<Line><num>3</num><lyric>とうしんだいの</lyric></Line>
-<Line><num>4</num><lyric>うらおもて</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>47</seq><startTime>3</startTime>
-<lines>
-<Line><num>1</num><lyric>きょうはくてきに</lyric></Line>
-<Line><num>2</num><lyric>しばっちゃってー</lyric></Line>
-<Line><num>3</num><lyric>もうまくのうえに</lyric></Line>
-<Line><num>4</num><lyric>はっちゃってー</lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>48</seq><startTime>3.03</startTime>
-<lines>
-<Line><num>1</num><lyric>もーラブラブでいっちゃってよ</lyric></Line>
-<Line><num>2</num><lyric>あい あい あい あい</lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>49</seq><startTime>3.01</startTime>
-<lines>
-<Line><num>1</num><lyric>ない</lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>50</seq><startTime>0.94</startTime>
-<lines>
-<Line><num>1</num><lyric></lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-<Page>
-<seq>51</seq><startTime>5.34</startTime>
-<lines>
-<Line><num>1</num><lyric></lyric></Line>
-<Line><num>2</num><lyric></lyric></Line>
-<Line><num>3</num><lyric></lyric></Line>
-<Line><num>4</num><lyric></lyric></Line>
-</lines>
-</Page>
-</pages>
+<?xml version="1.0" encoding="utf-8"?>
+<LyricsModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <title>裏表ラバーズ</title>
+  <artist>wowaka</artist>
+  <pages>
+    <Page>
+      <seq>1</seq>
+      <startTime>19.68731</startTime>
+      <interval>19.68731</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>いいことずくめの</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>ゆめからさめた</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>わたしの</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>のうないかんきょうは</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>2</seq>
+      <startTime>22.71903</startTime>
+      <interval>3.031721</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ラブという</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>えたいのしれないものに</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>おかされてしまいまして</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>それからは</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>3</seq>
+      <startTime>25.71761</startTime>
+      <interval>2.998575</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうしようもなく</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>ふたつにさけた</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>しんないかんきょうを</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>4</seq>
+      <startTime>28.71618</startTime>
+      <interval>2.998573</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>せいぎょするだけの</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>キャパシティなどが</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>そんざいしている</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>はずもないので</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>5</seq>
+      <startTime>31.74802</startTime>
+      <interval>3.031843</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>あいまいな たいがいの</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>イノセントな</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>かんじょうろんをぶちまけた</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>ことのはのなか</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>6</seq>
+      <startTime>37.79499</startTime>
+      <interval>6.046974</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうにかこうにか</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>げんざいちてんを</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>かくにんする</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>めだまをほしがっている</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>7</seq>
+      <startTime>43.42765</startTime>
+      <interval>5.632656</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>せい</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>8</seq>
+      <startTime>43.80864</startTime>
+      <interval>0.3809891</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>9</seq>
+      <startTime>55.86978</startTime>
+      <interval>12.06114</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうしてずくめのまいにち</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>そうして</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>ああしてこうして</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>サヨナラベイベー</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>10</seq>
+      <startTime>58.93443</startTime>
+      <interval>3.064648</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>げんじつちょくしと</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>げんじつとうひの</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>ひょうりいったいな</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>このしんぞう</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>11</seq>
+      <startTime>61.96616</startTime>
+      <interval>3.031731</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どこかにいいことないかな</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>なんて</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>うらがえしの</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>じぶんにとうよ</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>12</seq>
+      <startTime>64.89847</startTime>
+      <interval>2.932308</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>じもんじとう</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>13</seq>
+      <startTime>65.49483</startTime>
+      <interval>0.5963669</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>じもんたとう</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>14</seq>
+      <startTime>66.02538</startTime>
+      <interval>0.5305557</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>たもんじとうつれまわし</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>15</seq>
+      <startTime>67.20115</startTime>
+      <interval>1.175766</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ああああ</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>16</seq>
+      <startTime>67.74786</startTime>
+      <interval>0.5467072</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ただほんのうてきに</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>ふれちゃって</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>でもいいたいことって</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>ないんで</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>17</seq>
+      <startTime>70.76633</startTime>
+      <interval>3.018471</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>いたいんで</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>さわって</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>あえいで</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>てんにものぼれるきになって</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>18</seq>
+      <startTime>74.04642</startTime>
+      <interval>3.280098</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうにもこうにも</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>にっちもさっちも</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>あっちもこっちも</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>いますぐあちらへとびこんでいけ</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>19</seq>
+      <startTime>80.01019</startTime>
+      <interval>5.963768</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>もーラブラブになっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>おうかくまくつっぱっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>20</seq>
+      <startTime>83.07488</startTime>
+      <interval>3.06469</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>きょうれつなあじにぶっとんでー</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>とうしんだいのうらおもて</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>21</seq>
+      <startTime>86.0902</startTime>
+      <interval>3.01532</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>きょうはくてきにしばっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>もうまくのうえにはっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>22</seq>
+      <startTime>89.10548</startTime>
+      <interval>3.015274</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>もーラブラブでいっちゃってよ</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>あいたい たい ない</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>23</seq>
+      <startTime>92.07413</startTime>
+      <interval>2.968658</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ない</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>24</seq>
+      <startTime>92.42107</startTime>
+      <interval>0.3469467</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>25</seq>
+      <startTime>110.2315</startTime>
+      <interval>17.81047</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>やなことずくめの</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>ゆめからさめた</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>わたしの</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>のうないかんきょうが</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>26</seq>
+      <startTime>113.2797</startTime>
+      <interval>3.048172</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ラブという</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>えたいのしれないものに</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>おかされてしまいまして</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>それからは</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>27</seq>
+      <startTime>116.2946</startTime>
+      <interval>3.014931</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうしようもなく</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>ふたつにさけた</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>しんないかんきょうを</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>28</seq>
+      <startTime>119.2765</startTime>
+      <interval>2.98188</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>せいぎょするための</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>リミッターなどを</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>かけるという</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>わけにもいかないので</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>29</seq>
+      <startTime>122.2749</startTime>
+      <interval>2.998405</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>たいがいは あいまいな</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>イノセントな</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>だいさいがいを</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>ふりまいた エゴをはらませ</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>30</seq>
+      <startTime>128.3382</startTime>
+      <interval>6.063339</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうにかこうにか</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>げんざいちてんを</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>かくにんしたことばを</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>てにつかんだようだ</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>31</seq>
+      <startTime>134.3692</startTime>
+      <interval>6.031021</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうしてずくめのまいにち</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>そうして</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>ああしてこうして</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>サヨナラベイベー</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>32</seq>
+      <startTime>137.4014</startTime>
+      <interval>3.032211</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>げんじつちょくしと</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>げんじつとうひの</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>ひょうりいったいな</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>このしんぞう</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>33</seq>
+      <startTime>140.467</startTime>
+      <interval>3.065582</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どこかにいいことないかな</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>なんて</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>うらがえしの</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>じぶんにとうよ</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>34</seq>
+      <startTime>143.4324</startTime>
+      <interval>2.965424</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>じもんじとう</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>35</seq>
+      <startTime>144.0123</startTime>
+      <interval>0.5799408</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>じもんたとう</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>36</seq>
+      <startTime>144.5759</startTime>
+      <interval>0.5635529</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>たもんじとうつれまわし</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>37</seq>
+      <startTime>145.6699</startTime>
+      <interval>1.094009</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ああああ</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>38</seq>
+      <startTime>146.1994</startTime>
+      <interval>0.5294647</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ただほんのうてきに</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>ふれちゃって</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>でもいいたいことって</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>ないんで</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>39</seq>
+      <startTime>149.2479</startTime>
+      <interval>3.048492</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>いたいんで</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>さわって</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>あえいで</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>てんにものぼれるきになって</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>40</seq>
+      <startTime>152.5121</startTime>
+      <interval>3.264252</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうにもこうにも</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>にっちもさっちも</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>あっちもこっちも</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>いますぐあちらへとびこめ</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>41</seq>
+      <startTime>158.8743</startTime>
+      <interval>6.362228</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>もうもくてきにきらっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>きょういくよていつくっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>42</seq>
+      <startTime>161.9064</startTime>
+      <interval>3.03212</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>どうしてもっていわせちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>とうしんだいのうらをまて</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>43</seq>
+      <startTime>164.9607</startTime>
+      <interval>3.054337</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ちょうはつてきにさそっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>しょうどうてきにうたっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>44</seq>
+      <startTime>167.9759</startTime>
+      <interval>3.015228</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>もーラブラブでいっちゃってよ</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>だいたい あい ない</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>45</seq>
+      <startTime>171.008</startTime>
+      <interval>3.032089</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>もーラブラブに</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>なっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>おうかくまく</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>つっぱっちゃってー</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>46</seq>
+      <startTime>173.9903</startTime>
+      <interval>2.982346</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>きょうれつなあじに</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>ぶっとんでー</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>とうしんだいの</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>うらおもて</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>47</seq>
+      <startTime>177.0062</startTime>
+      <interval>3.015884</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>きょうはくてきに</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>しばっちゃってー</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric>もうまくのうえに</lyric>
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric>はっちゃってー</lyric>
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>48</seq>
+      <startTime>180.0385</startTime>
+      <interval>3.032272</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>もーラブラブでいっちゃってよ</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric>あい あい あい あい</lyric>
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>49</seq>
+      <startTime>183.0548</startTime>
+      <interval>3.016327</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric>ない</lyric>
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>50</seq>
+      <startTime>183.5689</startTime>
+      <interval>0.5140686</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+    <Page>
+      <seq>51</seq>
+      <startTime>189.05</startTime>
+      <interval>5.34</interval>
+      <lines>
+        <Line>
+          <num>1</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>2</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>3</num>
+          <lyric />
+        </Line>
+        <Line>
+          <num>4</num>
+          <lyric />
+        </Line>
+      </lines>
+    </Page>
+  </pages>
 </LyricsModel>

@@ -10,9 +10,12 @@ public class btnPlay : MonoBehaviour {
     private Toggle btn_play;
     public Text id;
 
+    public static bool play_started;
+
     // Use this for initialization
     void Start () {
         btn_play = GetComponent<Toggle>();
+        play_started = false;
     }
 
     // Update is called once per frame
@@ -28,14 +31,16 @@ public class btnPlay : MonoBehaviour {
         {
             if (id.text == "000") return;
             Debug.Log("Play started:");
-            timeObj.Prepare(id.text);
+            musicObj.Prepare(id.text);
             musicObj.StartMusic(id.text);
-            timeObj.StartTimer();
+            //timeObj.StartTimer();
+            play_started = true;
         }
         else
         {
             Debug.Log("Play canceled:");
-            timeObj.CancelTimer();
+            play_started = false;
+            //timeObj.CancelTimer();
             musicObj.CancelMusic();
         }
     }

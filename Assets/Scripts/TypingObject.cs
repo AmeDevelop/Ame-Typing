@@ -21,11 +21,6 @@ public class TypingObject : MonoBehaviour {
 
     public SETypeObject setype;
 
-    // Use this for initialization
-    void Start () {
-
-    }
-
     private void Awake()
     {
         ts1 = new TypingSystem();
@@ -36,9 +31,15 @@ public class TypingObject : MonoBehaviour {
         //pageCnt = 0;
     }
 
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
     // Update is called once per frame
     void Update () {
-		
+        if (btnPlay.play_started) Control();
 	}
 
 
@@ -52,13 +53,23 @@ public class TypingObject : MonoBehaviour {
     }
 
     /// <summary>
+    /// 開始時間取得
+    /// </summary>
+    /// <param name="page"/>
+    /// <returns>interval</returns>
+    public string GetStartTime(int page)
+    {
+        return lyrics.GetStartTime(page);
+    }
+
+    /// <summary>
     /// インターバル時間取得
     /// </summary>
     /// <param name="page"/>
     /// <returns>interval</returns>
     public string GetInterval(int page)
     {
-        return lyrics.GetStartTime(page);
+        return lyrics.GetInterval(page);
     }
 
     /// <summary>
@@ -70,13 +81,24 @@ public class TypingObject : MonoBehaviour {
         return lyrics.GetMaxPage();
     }
 
-    ///// <summary>
-    ///// タイピングスタート
-    ///// </summary>
-    //public void StartTyping ()
-    //{
-    //    InitText();
-    //}
+    /// <summary>
+    /// タイミングの編集
+    /// </summary>
+    /// <param name="page"></param>
+    /// <param name="startTime"></param>
+    public void editTime(int page, float startTime)
+    {
+        lyrics.editTime(page, startTime);
+    }
+
+    /// <summary>
+    /// 編集データの書込
+    /// </summary>
+    public void editLyricsFile()
+    {
+        lyrics.editLyricsFile();
+    }
+
 
     /// <summary>
     /// タイピングキャンセル
@@ -94,6 +116,7 @@ public class TypingObject : MonoBehaviour {
         stringTextMesh3.text = "PRESS START !!";
         stringTextMesh4.text = "PRESS START !!";
         alphabetTextMesh.text = "PRESS START !!";
+        lyrics.UnloadLyrics();
         //pageCnt = 0;
     }
 
@@ -102,7 +125,7 @@ public class TypingObject : MonoBehaviour {
     /// <param name=""></param>
     /// <return></return>
     /// </summary>
-    public void Control ()
+    void Control ()
     {
         if (targetLine == 0 || targetLine > 4)
             return;

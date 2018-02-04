@@ -64,5 +64,13 @@
       <url>http://www.nicovideo.jp/watch/sm8082467</url>
       <time>03:31</time>
     </Music>
+    <Music>
+      <id>009</id>
+      <title>Just Be Friends</title>
+      <artist>Dixie Flatline</artist>
+      <level>5</level>
+      <url>http://www.nicovideo.jp/watch/sm7528841</url>
+      <time>03:31</time>
+    </Music>
   </music>
 </MusicListModel>

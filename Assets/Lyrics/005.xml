@@ -1,9 +1,9 @@
-<LyricsModel>
+﻿<LyricsModel>
 <title>サンドリヨン</title>
 <artist>シグナルＰ</artist>
 <pages>
 <Page>
-<seq>1</seq><startTime>41.08</startTime>
+<seq>1</seq><startTime>41.08</startTime><interval>41.08</interval>
 <lines>
 <Line><num>1</num><lyric>あさまで</lyric></Line>
 <Line><num>2</num><lyric>おどる</lyric></Line>
@@ -12,7 +12,7 @@
 </lines>
 </Page>
 <Page>
-<seq>2</seq><startTime>3.35</startTime>
+<seq>2</seq><startTime>44.43</startTime><interval>3.35</interval>
 <lines>
 <Line><num>1</num><lyric>とけいのかねがとくまほう</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -21,7 +21,7 @@
 </lines>
 </Page>
 <Page>
-<seq>3</seq><startTime>3.64</startTime>
+<seq>3</seq><startTime>48.07</startTime><interval>3.64</interval>
 <lines>
 <Line><num>1</num><lyric>あいまいなゆび</lyric></Line>
 <Line><num>2</num><lyric>さそうかいだん</lyric></Line>
@@ -30,7 +30,7 @@
 </lines>
 </Page>
 <Page>
-<seq>4</seq><startTime>7.23</startTime>
+<seq>4</seq><startTime>55.3</startTime><interval>7.23</interval>
 <lines>
 <Line><num>1</num><lyric>ばしゃのなかで</lyric></Line>
 <Line><num>2</num><lyric>ふるえてた</lyric></Line>
@@ -39,7 +39,7 @@
 </lines>
 </Page>
 <Page>
-<seq>5</seq><startTime>5.9</startTime>
+<seq>5</seq><startTime>61.2</startTime><interval>5.9</interval>
 <lines>
 <Line><num>1</num><lyric>みじめなふるぎ</lyric></Line>
 <Line><num>2</num><lyric>めくりめぐれ</lyric></Line>
@@ -48,7 +48,7 @@
 </lines>
 </Page>
 <Page>
-<seq>6</seq><startTime>6.08</startTime>
+<seq>6</seq><startTime>67.28</startTime><interval>6.08</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -57,7 +57,7 @@
 </lines>
 </Page>
 <Page>
-<seq>7</seq><startTime>2.1</startTime>
+<seq>7</seq><startTime>69.38</startTime><interval>2.1</interval>
 <lines>
 <Line><num>1</num><lyric>みしらぬ</lyric></Line>
 <Line><num>2</num><lyric>かおさがす</lyric></Line>
@@ -66,7 +66,7 @@
 </lines>
 </Page>
 <Page>
-<seq>8</seq><startTime>5.79</startTime>
+<seq>8</seq><startTime>75.17</startTime><interval>5.79</interval>
 <lines>
 <Line><num>1</num><lyric>にぎりしめた</lyric></Line>
 <Line><num>2</num><lyric>やいば</lyric></Line>
@@ -75,7 +75,7 @@
 </lines>
 </Page>
 <Page>
-<seq>9</seq><startTime>7.13</startTime>
+<seq>9</seq><startTime>82.3</startTime><interval>7.13</interval>
 <lines>
 <Line><num>1</num><lyric>みなしご</lyric></Line>
 <Line><num>2</num><lyric>つどうしろ</lyric></Line>
@@ -84,7 +84,7 @@
 </lines>
 </Page>
 <Page>
-<seq>10</seq><startTime>5.88</startTime>
+<seq>10</seq><startTime>88.18</startTime><interval>5.88</interval>
 <lines>
 <Line><num>1</num><lyric>いつわりのいつくしみさえ</lyric></Line>
 <Line><num>2</num><lyric>はねでつつむせらふ</lyric></Line>
@@ -93,7 +93,7 @@
 </lines>
 </Page>
 <Page>
-<seq>11</seq><startTime>8.41</startTime>
+<seq>11</seq><startTime>96.59</startTime><interval>8.41</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -102,7 +102,7 @@
 </lines>
 </Page>
 <Page>
-<seq>12</seq><startTime>11.8</startTime>
+<seq>12</seq><startTime>108.39</startTime><interval>11.8</interval>
 <lines>
 <Line><num>1</num><lyric>はいのなかで</lyric></Line>
 <Line><num>2</num><lyric>あかく</lyric></Line>
@@ -111,7 +111,7 @@
 </lines>
 </Page>
 <Page>
-<seq>13</seq><startTime>12.63</startTime>
+<seq>13</seq><startTime>121.02</startTime><interval>12.63</interval>
 <lines>
 <Line><num>1</num><lyric>いまさらかえる</lyric></Line>
 <Line><num>2</num><lyric>ふるえているの</lyric></Line>
@@ -120,7 +120,7 @@
 </lines>
 </Page>
 <Page>
-<seq>14</seq><startTime>3.37</startTime>
+<seq>14</seq><startTime>124.39</startTime><interval>3.37</interval>
 <lines>
 <Line><num>1</num><lyric>あなたがめをやるとけい</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -129,7 +129,7 @@
 </lines>
 </Page>
 <Page>
-<seq>15</seq><startTime>3.63</startTime>
+<seq>15</seq><startTime>128.02</startTime><interval>3.63</interval>
 <lines>
 <Line><num>1</num><lyric>くつぬぎおどる</lyric></Line>
 <Line><num>2</num><lyric>すろーぷぬけて</lyric></Line>
@@ -138,7 +138,7 @@
 </lines>
 </Page>
 <Page>
-<seq>16</seq><startTime>3.3</startTime>
+<seq>16</seq><startTime>131.32</startTime><interval>3.3</interval>
 <lines>
 <Line><num>1</num><lyric>のどまでのびるゆびのさきで</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -147,7 +147,7 @@
 </lines>
 </Page>
 <Page>
-<seq>17</seq><startTime>4.02</startTime>
+<seq>17</seq><startTime>135.34</startTime><interval>4.02</interval>
 <lines>
 <Line><num>1</num><lyric>すくうしずく</lyric></Line>
 <Line><num>2</num><lyric>くちつけて</lyric></Line>
@@ -156,7 +156,7 @@
 </lines>
 </Page>
 <Page>
-<seq>18</seq><startTime>5.78</startTime>
+<seq>18</seq><startTime>141.12</startTime><interval>5.78</interval>
 <lines>
 <Line><num>1</num><lyric>はしるしょうどう</lyric></Line>
 <Line><num>2</num><lyric>せぼねぬけていく</lyric></Line>
@@ -165,7 +165,7 @@
 </lines>
 </Page>
 <Page>
-<seq>19</seq><startTime>4.1</startTime>
+<seq>19</seq><startTime>145.22</startTime><interval>4.1</interval>
 <lines>
 <Line><num>1</num><lyric>せつな</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -174,7 +174,7 @@
 </lines>
 </Page>
 <Page>
-<seq>20</seq><startTime>2.02</startTime>
+<seq>20</seq><startTime>147.24</startTime><interval>2.02</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -183,7 +183,7 @@
 </lines>
 </Page>
 <Page>
-<seq>21</seq><startTime>2.01</startTime>
+<seq>21</seq><startTime>149.25</startTime><interval>2.01</interval>
 <lines>
 <Line><num>1</num><lyric>かねは ならさないで</lyric></Line>
 <Line><num>2</num><lyric>あなたに ひざまずき</lyric></Line>
@@ -192,7 +192,7 @@
 </lines>
 </Page>
 <Page>
-<seq>22</seq><startTime>5.84</startTime>
+<seq>22</seq><startTime>155.09</startTime><interval>5.84</interval>
 <lines>
 <Line><num>1</num><lyric>まだだめと</lyric></Line>
 <Line><num>2</num><lyric>さけんだみぎてが</lyric></Line>
@@ -201,7 +201,7 @@
 </lines>
 </Page>
 <Page>
-<seq>23</seq><startTime>7.18</startTime>
+<seq>23</seq><startTime>162.27</startTime><interval>7.18</interval>
 <lines>
 <Line><num>1</num><lyric>けせない</lyric></Line>
 <Line><num>2</num><lyric>しょうえんを</lyric></Line>
@@ -210,7 +210,7 @@
 </lines>
 </Page>
 <Page>
-<seq>24</seq><startTime>5.78</startTime>
+<seq>24</seq><startTime>168.05</startTime><interval>5.78</interval>
 <lines>
 <Line><num>1</num><lyric>つよいひとみ</lyric></Line>
 <Line><num>2</num><lyric>ぼくのこおった</lyric></Line>
@@ -219,7 +219,7 @@
 </lines>
 </Page>
 <Page>
-<seq>25</seq><startTime>9.04</startTime>
+<seq>25</seq><startTime>177.09</startTime><interval>9.04</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -228,7 +228,7 @@
 </lines>
 </Page>
 <Page>
-<seq>26</seq><startTime>4.46</startTime>
+<seq>26</seq><startTime>181.55</startTime><interval>4.46</interval>
 <lines>
 <Line><num>1</num><lyric>いまもみみに</lyric></Line>
 <Line><num>2</num><lyric>あなたのといきが</lyric></Line>
@@ -237,7 +237,7 @@
 </lines>
 </Page>
 <Page>
-<seq>27</seq><startTime>12.89</startTime>
+<seq>27</seq><startTime>194.44</startTime><interval>12.89</interval>
 <lines>
 <Line><num>1</num><lyric>すてんどぐらすごし ひかるつきが</lyric></Line>
 <Line><num>2</num><lyric>きみに かぶせたべーる</lyric></Line>
@@ -246,7 +246,7 @@
 </lines>
 </Page>
 <Page>
-<seq>28</seq><startTime>11.93</startTime>
+<seq>28</seq><startTime>206.37</startTime><interval>11.93</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -255,7 +255,7 @@
 </lines>
 </Page>
 <Page>
-<seq>29</seq><startTime>1.64</startTime>
+<seq>29</seq><startTime>208.01</startTime><interval>1.64</interval>
 <lines>
 <Line><num>1</num><lyric>どれす ひざでさいて</lyric></Line>
 <Line><num>2</num><lyric>てぃあらは なげすてて</lyric></Line>
@@ -264,7 +264,7 @@
 </lines>
 </Page>
 <Page>
-<seq>30</seq><startTime>10.29</startTime>
+<seq>30</seq><startTime>218.3</startTime><interval>10.29</interval>
 <lines>
 <Line><num>1</num><lyric>ひばなをはなつ</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -273,7 +273,7 @@
 </lines>
 </Page>
 <Page>
-<seq>31</seq><startTime>2.74</startTime>
+<seq>31</seq><startTime>221.04</startTime><interval>2.74</interval>
 <lines>
 <Line><num>1</num><lyric>こどくなたましいが</lyric></Line>
 <Line><num>2</num><lyric>ほのおあげ ひかれあう</lyric></Line>
@@ -282,7 +282,7 @@
 </lines>
 </Page>
 <Page>
-<seq>32</seq><startTime>6.22</startTime>
+<seq>32</seq><startTime>227.26</startTime><interval>6.22</interval>
 <lines>
 <Line><num>1</num><lyric>そのなみだ</lyric></Line>
 <Line><num>2</num><lyric>すくえないなら</lyric></Line>
@@ -291,7 +291,7 @@
 </lines>
 </Page>
 <Page>
-<seq>33</seq><startTime>6.91</startTime>
+<seq>33</seq><startTime>234.17</startTime><interval>6.91</interval>
 <lines>
 <Line><num>1</num><lyric>ときよ</lyric></Line>
 <Line><num>2</num><lyric>とまれいまは</lyric></Line>
@@ -300,7 +300,7 @@
 </lines>
 </Page>
 <Page>
-<seq>34</seq><startTime>3.22</startTime>
+<seq>34</seq><startTime>237.39</startTime><interval>3.22</interval>
 <lines>
 <Line><num>1</num><lyric>あなたによいしれて</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -309,7 +309,7 @@
 </lines>
 </Page>
 <Page>
-<seq>35</seq><startTime>2.97</startTime>
+<seq>35</seq><startTime>240.36</startTime><interval>2.97</interval>
 <lines>
 <Line><num>1</num><lyric>ゆれるこどう</lyric></Line>
 <Line><num>2</num><lyric>ひとつひとつを</lyric></Line>
@@ -318,7 +318,7 @@
 </lines>
 </Page>
 <Page>
-<seq>36</seq><startTime>6.76</startTime>
+<seq>36</seq><startTime>247.12</startTime><interval>6.76</interval>
 <lines>
 <Line><num>1</num><lyric>とどまれ</lyric></Line>
 <Line><num>2</num><lyric>あつくぬれ</lyric></Line>
@@ -327,7 +327,7 @@
 </lines>
 </Page>
 <Page>
-<seq>37</seq><startTime>6.22</startTime>
+<seq>37</seq><startTime>253.34</startTime><interval>6.22</interval>
 <lines>
 <Line><num>1</num><lyric>これいじょうは</lyric></Line>
 <Line><num>2</num><lyric>うごけないよ</lyric></Line>
@@ -336,7 +336,7 @@
 </lines>
 </Page>
 <Page>
-<seq>38</seq><startTime>3.9</startTime>
+<seq>38</seq><startTime>257.24</startTime><interval>3.9</interval>
 <lines>
 <Line><num>1</num><lyric>まるで ふぇありぃている</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -345,7 +345,7 @@
 </lines>
 </Page>
 <Page>
-<seq>39</seq><startTime>4.73</startTime>
+<seq>39</seq><startTime>261.97</startTime><interval>4.73</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -354,7 +354,7 @@
 </lines>
 </Page>
 <Page>
-<seq>40</seq><startTime>11.41</startTime>
+<seq>40</seq><startTime>273.38</startTime><interval>11.41</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>

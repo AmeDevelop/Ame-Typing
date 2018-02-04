@@ -1,9 +1,9 @@
-<LyricsModel>
+﻿<LyricsModel>
 <title>ダブルラリアット</title>
 <artist>アゴアニキ</artist>
 <pages>
 <Page>
-<seq>1</seq><startTime>0.64</startTime>
+<seq>1</seq><startTime>0.64</startTime><interval>0.64</interval>
 <lines>
 <Line><num>1</num><lyric>はんけいはちじゅうごせんちが</lyric></Line>
 <Line><num>2</num><lyric>このてのとどくきょり</lyric></Line>
@@ -12,7 +12,7 @@
 </lines>
 </Page>
 <Page>
-<seq>2</seq><startTime>13.94</startTime>
+<seq>2</seq><startTime>14.58</startTime><interval>13.94</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -21,7 +21,7 @@
 </lines>
 </Page>
 <Page>
-<seq>3</seq><startTime>14.08</startTime>
+<seq>3</seq><startTime>28.66</startTime><interval>14.08</interval>
 <lines>
 <Line><num>1</num><lyric>ただまわることがたのしかった</lyric></Line>
 <Line><num>2</num><lyric>このままでいたかった</lyric></Line>
@@ -30,7 +30,7 @@
 </lines>
 </Page>
 <Page>
-<seq>4</seq><startTime>7.03</startTime>
+<seq>4</seq><startTime>35.69</startTime><interval>7.03</interval>
 <lines>
 <Line><num>1</num><lyric>ただまわることをつづけていたら</lyric></Line>
 <Line><num>2</num><lyric>とまりかたをわすれていた</lyric></Line>
@@ -39,7 +39,7 @@
 </lines>
 </Page>
 <Page>
-<seq>5</seq><startTime>6.72</startTime>
+<seq>5</seq><startTime>42.41</startTime><interval>6.72</interval>
 <lines>
 <Line><num>1</num><lyric>まわりのなかまたちが</lyric></Line>
 <Line><num>2</num><lyric>じぶんよりうまくまわれるのを</lyric></Line>
@@ -48,7 +48,7 @@
 </lines>
 </Page>
 <Page>
-<seq>6</seq><startTime>10.62</startTime>
+<seq>6</seq><startTime>53.03</startTime><interval>10.62</interval>
 <lines>
 <Line><num>1</num><lyric>つぶやいてあきらめたふりをしていた</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -57,7 +57,7 @@
 </lines>
 </Page>
 <Page>
-<seq>7</seq><startTime>6.77</startTime>
+<seq>7</seq><startTime>59.8</startTime><interval>6.77</interval>
 <lines>
 <Line><num>1</num><lyric>はんけいにひゃくごじゅっせんちは</lyric></Line>
 <Line><num>2</num><lyric>このてのとどくきょり</lyric></Line>
@@ -66,7 +66,7 @@
 </lines>
 </Page>
 <Page>
-<seq>8</seq><startTime>13.87</startTime>
+<seq>8</seq><startTime>73.67</startTime><interval>13.87</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -75,7 +75,7 @@
 </lines>
 </Page>
 <Page>
-<seq>9</seq><startTime>14.14</startTime>
+<seq>9</seq><startTime>87.81</startTime><interval>14.14</interval>
 <lines>
 <Line><num>1</num><lyric>からまわることもたのしかった</lyric></Line>
 <Line><num>2</num><lyric>このままでいたかった</lyric></Line>
@@ -84,7 +84,7 @@
 </lines>
 </Page>
 <Page>
-<seq>10</seq><startTime>6.96</startTime>
+<seq>10</seq><startTime>94.77</startTime><interval>6.96</interval>
 <lines>
 <Line><num>1</num><lyric>からまわることをつづけていたら</lyric></Line>
 <Line><num>2</num><lyric>むくわれるとしんじていた</lyric></Line>
@@ -93,7 +93,7 @@
 </lines>
 </Page>
 <Page>
-<seq>11</seq><startTime>6.74</startTime>
+<seq>11</seq><startTime>101.51</startTime><interval>6.74</interval>
 <lines>
 <Line><num>1</num><lyric>まわりのなかまたちは</lyric></Line>
 <Line><num>2</num><lyric>じぶんよりたかくまわれるから</lyric></Line>
@@ -102,7 +102,7 @@
 </lines>
 </Page>
 <Page>
-<seq>12</seq><startTime>10.67</startTime>
+<seq>12</seq><startTime>112.18</startTime><interval>10.67</interval>
 <lines>
 <Line><num>1</num><lyric>くびがいたいとすねたふりをしていた</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -111,7 +111,7 @@
 </lines>
 </Page>
 <Page>
-<seq>13</seq><startTime>6.72</startTime>
+<seq>13</seq><startTime>118.9</startTime><interval>6.72</interval>
 <lines>
 <Line><num>1</num><lyric>はんけいごせんにひゃくせんちは</lyric></Line>
 <Line><num>2</num><lyric>このてのとどくきょり</lyric></Line>
@@ -120,7 +120,7 @@
 </lines>
 </Page>
 <Page>
-<seq>14</seq><startTime>13.93</startTime>
+<seq>14</seq><startTime>132.83</startTime><interval>13.93</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -129,7 +129,7 @@
 </lines>
 </Page>
 <Page>
-<seq>15</seq><startTime>13.87</startTime>
+<seq>15</seq><startTime>146.7</startTime><interval>13.87</interval>
 <lines>
 <Line><num>1</num><lyric>どうでしょう</lyric></Line>
 <Line><num>2</num><lyric>むかしのじぶんがみたらほめてくれるかな</lyric></Line>
@@ -138,7 +138,7 @@
 </lines>
 </Page>
 <Page>
-<seq>16</seq><startTime>6.97</startTime>
+<seq>16</seq><startTime>153.67</startTime><interval>6.97</interval>
 <lines>
 <Line><num>1</num><lyric>めがまわりじくもぶれてるけど</lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
@@ -147,7 +147,7 @@
 </lines>
 </Page>
 <Page>
-<seq>17</seq><startTime>6.96</startTime>
+<seq>17</seq><startTime>160.63</startTime><interval>6.96</interval>
 <lines>
 <Line><num>1</num><lyric>にじゅうさんてんよんどかたむいて</lyric></Line>
 <Line><num>2</num><lyric>ながめたまちなみは</lyric></Line>
@@ -156,7 +156,7 @@
 </lines>
 </Page>
 <Page>
-<seq>18</seq><startTime>13.92</startTime>
+<seq>18</seq><startTime>174.55</startTime><interval>13.92</interval>
 <lines>
 <Line><num>1</num><lyric>はんけいろくせんさんびゃっきろは</lyric></Line>
 <Line><num>2</num><lyric>このてのとどくきょり</lyric></Line>
@@ -165,7 +165,7 @@
 </lines>
 </Page>
 <Page>
-<seq>19</seq><startTime>13.88</startTime>
+<seq>19</seq><startTime>188.43</startTime><interval>13.88</interval>
 <lines>
 <Line><num>1</num><lyric>はんけいはちじゅうごせんちが</lyric></Line>
 <Line><num>2</num><lyric>このてのとどくきょり</lyric></Line>
@@ -174,7 +174,7 @@
 </lines>
 </Page>
 <Page>
-<seq>20</seq><startTime>17.57</startTime>
+<seq>20</seq><startTime>206</startTime><interval>17.57</interval>
 <lines>
 <Line><num>1</num><lyric></lyric></Line>
 <Line><num>2</num><lyric></lyric></Line>
