@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -467,10 +465,8 @@
   <ItemGroup>
     <None Include="Assets\Lyrics\001.xml" />
     <None Include="Assets\Lyrics\002.xml" />
-    <None Include="Assets\Lyrics\003.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Assets\Lyrics\003_edit.xml" />
+    <None Include="Assets\Lyrics\003.xml" />
+    <None Include="Assets\Lyrics\003_bk.xml" />
     <None Include="Assets\Lyrics\004.xml" />
     <None Include="Assets\Lyrics\004_bk.xml" />
     <None Include="Assets\Lyrics\005.xml" />
@@ -480,9 +476,7 @@
     <None Include="Assets\Lyrics\007_edit.xml" />
     <None Include="Assets\Lyrics\008.xml" />
     <None Include="Assets\Lyrics\008_bk.xml" />
-    <None Include="Assets\Lyrics\009.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\Lyrics\009.xml" />
     <None Include="Assets\Lyrics\dictionary.txt" />
     <None Include="Assets\Lyrics\music_list.xml" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
