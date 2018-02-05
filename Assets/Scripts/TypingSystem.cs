@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,19 +25,25 @@ public class TypingSystem {
     //パターンチップのリスト
     List<PatternTip> patternTips = new List<PatternTip> ();
 
+    //カナでShiftキー押下が必要なもの
+    string[] shiftChars = { "ぁ", "ぃ", "ぅ", "ぇ", "ぉ", "っ", "ゃ", "ゅ", "ょ", "を", };
+    //カナでShiftキー押下してはいけないもの
+    string[] shiftNGChars = { "あ", "う", "え", "お", "や", "ゆ", "よ", "い", "゜", "む", "つ", "ね", "る", "め", "わ"};
 
-	//入力する文字列(ひらがなorカタカナ)をセットし初期化する.
-	public void SetInputString(string s){
+
+    //入力する文字列(ひらがなorカタカナ)をセットし初期化する.
+    public void SetInputString(string s, bool isKana = false){
 		InputStringOrigin = InputString = RestStringOrigin = s;
 		RestString = StringToHiragana (s);
 		InputedKeys = "";
 		last_n_secondary = false;
         patternTips.Clear ();
-		UpdatePatternTips ();
+		UpdatePatternTips (isKana);
 	}
+
 	//入力されたキーを引数に，判定を行う．
 	//入力に成功すれば1，失敗すれば0を返す．
-	public int InputKey(string input){
+	public int InputKey(string input, bool isKana = false, bool isShift = false){
 
 		// List<int> removeList = new List<int> ();
 
@@ -45,26 +52,52 @@ public class TypingSystem {
 		if (input.Length > 1)
 			input = input [0].ToString ();
 
-        if (input == "n" && InputedKeys.Length > 0 && last_n_secondary == false){
+        
+        if (isKana)
+        {
+            // カナの場合はシフト判定が必要
+            if (Array.IndexOf(shiftChars, GetRestString()[0]) != -1)
+            {
+                // シフトが押されなければNG
+                if (!isShift) return 0;
 
-			if(InputedKeys[InputedKeys.Length - 1] == 'n' ){
-				bool canAddN = true;
-				for (int i =patternTips.Count -1; i>=0; i--) {
-					char f = patternTips[i].alphabet[0];
-					if( f != 'n' && f != 'y' && f != 'a' && f != 'i' && f != 'u' && 
-					   f != 'e' && f != 'o'){
+            } else if (Array.IndexOf(shiftNGChars, GetRestString()[0]) != -1)
+            {
+                // シフトが押されていたらNG
+                if (isShift) return 0;
+            }
 
-					}else{
-						canAddN = false;
-					}
-				}
-				if(canAddN){
-					InputedKeys += "n";
-					last_n_secondary = true;
-					return 1;
-				}
-			}
-		}
+        } else
+        {
+            // ロマの場合はN判定が必要
+            if (input == "n" && InputedKeys.Length > 0 && last_n_secondary == false)
+            {
+
+                if (InputedKeys[InputedKeys.Length - 1] == 'n')
+                {
+                    bool canAddN = true;
+                    for (int i = patternTips.Count - 1; i >= 0; i--)
+                    {
+                        char f = patternTips[i].alphabet[0];
+                        if (f != 'n' && f != 'y' && f != 'a' && f != 'i' && f != 'u' &&
+                           f != 'e' && f != 'o')
+                        {
+
+                        }
+                        else
+                        {
+                            canAddN = false;
+                        }
+                    }
+                    if (canAddN)
+                    {
+                        InputedKeys += "n";
+                        last_n_secondary = true;
+                        return 1;
+                    }
+                }
+            }
+        }
 
 		for (int i =patternTips.Count -1; i>=0; i--) {
 			patternTips [i].isPoped = false;
@@ -92,12 +125,13 @@ public class TypingSystem {
 					if (tip.remainder == "") {
 						RestString = RestString.Substring (next.Length);
 						RestStringOrigin = RestStringOrigin.Substring (next.Length);
-						UpdatePatternTips ();
+						UpdatePatternTips (isKana);
 					} else {
 						RestString = RestString.Substring (next.Length - tip.remainder.Length);
 						RestStringOrigin = RestStringOrigin.Substring (next.Length - tip.remainder.Length);
 						next = tip.remainder;
-						GetPatternTips (patternTips, next);
+                        // TEST
+						GetPatternTips (patternTips, next, isKana);
 					
 					}
 				}
@@ -141,7 +175,11 @@ public class TypingSystem {
 	}
 
 	//残りの入力すべきキーを候補を一つ返す．
-	public string GetRestKey(){
+	public string GetRestKey(bool isKana = false){
+        if (isKana)
+        {
+            return GetRestString(false, false);
+        }
 		string restStr = "";
 		string restKeys = "";
 		if (patternTips.Count > 0) {
@@ -149,10 +187,10 @@ public class TypingSystem {
 			restKeys += patternTips [0].alphabet;
 		}
 		while (restStr.Length > 0) {
-			string head = GetNextPattern(restStr);
+			string head = GetNextPattern(restStr, isKana);
 			if(head == "")break;
 			List<PatternTip> tips = new List<PatternTip>(); 
-			GetPatternTips(tips, head);
+			GetPatternTips(tips, head, isKana);
 			restKeys += tips [0].alphabet;
 			restStr = restStr.Substring (head.Length - tips [0].remainder.Length);
 		}
@@ -172,7 +210,11 @@ public class TypingSystem {
 		}
 	}
 	//すでに入力成功済みのキーを返す．
-	public string GetInputedKey(){
+	public string GetInputedKey(bool isKana = false){
+        if (isKana)
+        {
+            return GetInputedString(false, false);
+        }
 		return InputedKeys;
 	}
 	//すべての文字列の判定が終了したかどうかを返す．
@@ -184,25 +226,31 @@ public class TypingSystem {
 	}
 
     //残りの次の一文字を削除する(スペースコンボ対応)
-    public void RemoveSpace()
+    public void RemoveSpace(bool isKana = false)
     {
         RestStringOrigin = RestStringOrigin.Substring(1);
         RestString = RestString.Substring(1);
-        next = GetNextPattern(RestString);
+        next = GetNextPattern(RestString, isKana);
         patternTips.Clear();
-        GetPatternTips(patternTips, next);
+        GetPatternTips(patternTips, next, isKana);
     }
 
-    void UpdatePatternTips(){
-		next = GetNextPattern (RestString);
-		GetPatternTips (patternTips, next);
+    void UpdatePatternTips(bool isKana = false){
+		next = GetNextPattern (RestString, isKana);
+		GetPatternTips (patternTips, next, isKana);
 	}
 
-	string GetNextPattern(string s){
+	string GetNextPattern(string s, bool isKana = false){
 		if (s == "") {
 			return "";
 		}
+
 		char head = s [0];
+
+        // カナの場合は素直に次の文字を返す
+        if (isKana)
+            return head.ToString();
+
         switch (head)
         {
             case 'ん':
@@ -355,10 +403,17 @@ public class TypingSystem {
         //return "";
         #endregion ORIGINAL CODE
     }
-    void GetPatternTips(List<PatternTip> tips, string s){
+    void GetPatternTips(List<PatternTip> tips, string s, bool isKana = false){
 		if (s.Length <= 0)
 			return;
-		switch (s) {
+
+        if (isKana)
+        {
+            GetPatternTips_JIS(tips, s);
+            return;
+        }
+
+        switch (s) {
 		case "あ":
 			tips.Add(new PatternTip("a"));
 			break;
@@ -1160,7 +1215,360 @@ public class TypingSystem {
 		}
 	}
 
-	string StringToKatakana(string s){
+    void GetPatternTips_JIS(List<PatternTip> tips, string s)
+    {
+        if (s.Length <= 0)
+            return;
+
+        switch (s)
+        {
+            case "あ":
+            case "ぁ":
+                tips.Add(new PatternTip("3"));
+                break;
+            case "い":
+            case "ぃ":
+                tips.Add(new PatternTip("e"));
+                break;
+            case "う":
+            case "ぅ":
+                tips.Add(new PatternTip("4"));
+                break;
+            case "ゔ":
+                tips.Add(new PatternTip("4", "゛"));
+                break;
+            case "え":
+            case "ぇ":
+                tips.Add(new PatternTip("5"));
+                break;
+            case "お":
+            case "ぉ":
+                tips.Add(new PatternTip("6"));
+                break;
+            case "か":
+                tips.Add(new PatternTip("t"));
+                break;
+            case "き":
+                tips.Add(new PatternTip("g"));
+                break;
+            case "く":
+                tips.Add(new PatternTip("h"));
+                break;
+            case "け":
+                tips.Add(new PatternTip(";"));
+                break;
+            case "こ":
+                tips.Add(new PatternTip("b"));
+                break;
+            case "が":
+                tips.Add(new PatternTip("t","゛"));
+                break;
+            case "ぎ":
+                tips.Add(new PatternTip("g", "゛"));
+                break;
+            case "ぐ":
+                tips.Add(new PatternTip("h", "゛"));
+                break;
+            case "げ":
+                tips.Add(new PatternTip(";", "゛"));
+                break;
+            case "ご":
+                tips.Add(new PatternTip("b", "゛"));
+                break;
+            case "さ":
+                tips.Add(new PatternTip("x"));
+                break;
+            case "し":
+                tips.Add(new PatternTip("d"));
+                break;
+            case "す":
+                tips.Add(new PatternTip("r"));
+                break;
+            case "せ":
+                tips.Add(new PatternTip("p"));
+                break;
+            case "そ":
+                tips.Add(new PatternTip("c"));
+                break;
+            case "ざ":
+                tips.Add(new PatternTip("x", "゛"));
+                break;
+            case "じ":
+                tips.Add(new PatternTip("d", "゛"));
+                break;
+            case "ず":
+                tips.Add(new PatternTip("r", "゛"));
+                break;
+            case "ぜ":
+                tips.Add(new PatternTip("p", "゛"));
+                break;
+            case "ぞ":
+                tips.Add(new PatternTip("c", "゛"));
+                break;
+            case "た":
+                tips.Add(new PatternTip("q"));
+                break;
+            case "ち":
+                tips.Add(new PatternTip("a"));
+                break;
+            case "つ":
+            case "っ":
+                tips.Add(new PatternTip("z"));
+                break;
+            case "て":
+                tips.Add(new PatternTip("w"));
+                break;
+            case "と":
+                tips.Add(new PatternTip("s"));
+                break;
+            case "だ":
+                tips.Add(new PatternTip("q", "゛"));
+                break;
+            case "ぢ":
+                tips.Add(new PatternTip("a", "゛"));
+                break;
+            case "づ":
+                tips.Add(new PatternTip("z", "゛"));
+                break;
+            case "で":
+                tips.Add(new PatternTip("w", "゛"));
+                break;
+            case "ど":
+                tips.Add(new PatternTip("s", "゛"));
+                break;
+            case "な":
+                tips.Add(new PatternTip("u"));
+                break;
+            case "に":
+                tips.Add(new PatternTip("i"));
+                break;
+            case "ぬ":
+                tips.Add(new PatternTip("1"));
+                break;
+            case "ね":
+                tips.Add(new PatternTip(","));
+                break;
+            case "の":
+                tips.Add(new PatternTip("k"));
+                break;
+            case "は":
+                tips.Add(new PatternTip("f"));
+                break;
+            case "ひ":
+                tips.Add(new PatternTip("v"));
+                break;
+            case "ふ":
+                tips.Add(new PatternTip("2"));
+                break;
+            case "へ":
+                tips.Add(new PatternTip("'"));
+                break;
+            case "ほ":
+                tips.Add(new PatternTip("-"));
+                break;
+            case "ば":
+                tips.Add(new PatternTip("f", "゛"));
+                break;
+            case "び":
+                tips.Add(new PatternTip("v", "゛"));
+                break;
+            case "ぶ":
+                tips.Add(new PatternTip("2", "゛"));
+                break;
+            case "べ":
+                tips.Add(new PatternTip("'", "゛"));
+                break;
+            case "ぼ":
+                tips.Add(new PatternTip("-", "゛"));
+                break;
+            case "ぱ":
+                tips.Add(new PatternTip("f", "゜"));
+                break;
+            case "ぴ":
+                tips.Add(new PatternTip("v", "゜"));
+                break;
+            case "ぷ":
+                tips.Add(new PatternTip("2", "゜"));
+                break;
+            case "ぺ":
+                tips.Add(new PatternTip("'", "゜"));
+                break;
+            case "ぽ":
+                tips.Add(new PatternTip("-", "゜"));
+                break;
+            case "ま":
+                tips.Add(new PatternTip("j"));
+                break;
+            case "み":
+                tips.Add(new PatternTip("n"));
+                break;
+            case "む":
+                tips.Add(new PatternTip("]"));
+                break;
+            case "め":
+                tips.Add(new PatternTip("/"));
+                break;
+            case "も":
+                tips.Add(new PatternTip("m"));
+                break;
+            case "や":
+            case "ゃ":
+                tips.Add(new PatternTip("7"));
+                break;
+            case "ゆ":
+            case "ゅ":
+                tips.Add(new PatternTip("8"));
+                break;
+            case "よ":
+            case "ょ":
+                tips.Add(new PatternTip("9"));
+                break;
+            case "ら":
+                tips.Add(new PatternTip("o"));
+                break;
+            case "り":
+                tips.Add(new PatternTip("l"));
+                break;
+            case "る":
+                tips.Add(new PatternTip("."));
+                break;
+            case "れ":
+                tips.Add(new PatternTip("="));
+                break;
+            case "ろ":
+                tips.Add(new PatternTip("\\"));
+                break;
+            case "わ":
+            case "ゎ":
+                tips.Add(new PatternTip("0"));
+                break;
+            case "を":
+                tips.Add(new PatternTip("0"));
+                break;
+            case "ん":
+                tips.Add(new PatternTip("y"));
+                break;
+            case "゛":
+                tips.Add(new PatternTip("`"));
+                break;
+            case "゜":
+                tips.Add(new PatternTip("["));
+                break;
+            case "ー":
+                tips.Add(new PatternTip("\\"));
+                break;
+            // ADD
+            case "A":
+            case "a":
+                tips.Add(new PatternTip("a"));
+                break;
+            case "B":
+            case "b":
+                tips.Add(new PatternTip("b"));
+                break;
+            case "C":
+            case "c":
+                tips.Add(new PatternTip("c"));
+                break;
+            case "D":
+            case "d":
+                tips.Add(new PatternTip("d"));
+                break;
+            case "E":
+            case "e":
+                tips.Add(new PatternTip("e"));
+                break;
+            case "F":
+            case "f":
+                tips.Add(new PatternTip("f"));
+                break;
+            case "G":
+            case "g":
+                tips.Add(new PatternTip("g"));
+                break;
+            case "H":
+            case "h":
+                tips.Add(new PatternTip("h"));
+                break;
+            case "I":
+            case "i":
+                tips.Add(new PatternTip("i"));
+                break;
+            case "J":
+            case "j":
+                tips.Add(new PatternTip("j"));
+                break;
+            case "K":
+            case "k":
+                tips.Add(new PatternTip("k"));
+                break;
+            case "L":
+            case "l":
+                tips.Add(new PatternTip("l"));
+                break;
+            case "M":
+            case "m":
+                tips.Add(new PatternTip("m"));
+                break;
+            case "N":
+            case "n":
+                tips.Add(new PatternTip("n"));
+                break;
+            case "O":
+            case "o":
+                tips.Add(new PatternTip("o"));
+                break;
+            case "P":
+            case "p":
+                tips.Add(new PatternTip("p"));
+                break;
+            case "Q":
+            case "q":
+                tips.Add(new PatternTip("q"));
+                break;
+            case "R":
+            case "r":
+                tips.Add(new PatternTip("r"));
+                break;
+            case "S":
+            case "s":
+                tips.Add(new PatternTip("s"));
+                break;
+            case "T":
+            case "t":
+                tips.Add(new PatternTip("t"));
+                break;
+            case "U":
+            case "u":
+                tips.Add(new PatternTip("u"));
+                break;
+            case "V":
+            case "v":
+                tips.Add(new PatternTip("v"));
+                break;
+            case "W":
+            case "w":
+                tips.Add(new PatternTip("w"));
+                break;
+            case "X":
+            case "x":
+                tips.Add(new PatternTip("x"));
+                break;
+            case "Y":
+            case "y":
+                tips.Add(new PatternTip("y"));
+                break;
+            case "Z":
+            case "z":
+                tips.Add(new PatternTip("z"));
+                break;
+            // END
+            default:
+                break;
+        }
+    }
+
+    string StringToKatakana(string s){
 		return new string(s.Select(c => (c >= 'ぁ' && c <= 'ゖ') ? (char)(c + 'ァ' - 'ぁ') : c).ToArray());
 	}
 	string StringToHiragana(string s){

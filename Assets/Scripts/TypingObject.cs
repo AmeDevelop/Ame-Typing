@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +11,15 @@ public class TypingObject : MonoBehaviour {
     public Text stringTextMesh3;
     public Text stringTextMesh4;
     public Text alphabetTextMesh;
+
     private TypingSystem ts1;
     private TypingSystem ts2;
     private TypingSystem ts3;
     private TypingSystem ts4;
     private int targetLine;
 
-    private string[] keys = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", };
+    private string[] keys = { "1","2","3","4","5","6","7","8","9","0","-","'","\"","q","w","e","r","t","y","u","i","o","p","`","[","a","s","d","f","g","h","j","k","l","=",";","]","z","x","c","v","b","n","m",",",".","/","\\", };
+    //private string[] keys = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "\"", "#", "$", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", };
     public Lyrics lyrics;
 
     public SETypeObject setype;
@@ -130,23 +133,27 @@ public class TypingObject : MonoBehaviour {
         if (targetLine == 0 || targetLine > 4)
             return;
 
+        // シフトキー押下しているかどうか
+        bool isShift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
         foreach (string key in keys)
         {
             if (Input.GetKeyDown(key))
             {
+                //Debug.Log(key);
                 switch (targetLine)
                 {
                     case 1:
-                        ControlUpdate(ts1, key, ts2);
+                        ControlUpdate(ts1, key, isShift, ts2);
                         break;
                     case 2:
-                        ControlUpdate(ts2, key, ts3);
+                        ControlUpdate(ts2, key, isShift, ts3);
                         break;
                     case 3:
-                        ControlUpdate(ts3, key, ts4);
+                        ControlUpdate(ts3, key, isShift, ts4);
                         break;
                     case 4:
-                        ControlUpdate(ts4, key);
+                        ControlUpdate(ts4, key, isShift);
                         break;
                     default:
                         Debug.Log("ERROR: " + System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -161,17 +168,19 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     /// <param name="ts"></param>
     /// <param name="key"></param>
-    void ControlUpdate(TypingSystem ts, string key, TypingSystem nextts = null)
+    /// <param name="isShift"></param>
+    /// <param name="nextts"></param>
+    void ControlUpdate(TypingSystem ts, string key, bool isShift, TypingSystem nextts = null)
     {
         bool comb = false;
 
-        if (ts.InputKey(key) == 1 )
+        if (ts.InputKey(key, btnKanaRoma.isKana, isShift) == 1 )
         {
             setype.OKtype();
             // スペース判定
             if (ts.GetRestString().Length > 0 && ts.GetRestString()[0] == ' ')
             {
-                ts.RemoveSpace();
+                ts.RemoveSpace(btnKanaRoma.isKana);
                 comb = true;
             }
             StartCoroutine("UpdateText");
@@ -208,10 +217,10 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     public void InitText()
     {
-        ts1.SetInputString("");
-        ts2.SetInputString("");
-        ts3.SetInputString("");
-        ts4.SetInputString("");
+        ts1.SetInputString("", btnKanaRoma.isKana);
+        ts2.SetInputString("", btnKanaRoma.isKana);
+        ts3.SetInputString("", btnKanaRoma.isKana);
+        ts4.SetInputString("", btnKanaRoma.isKana);
         stringTextMesh1.text = "";
         stringTextMesh2.text = "";
         stringTextMesh3.text = "";
@@ -231,15 +240,16 @@ public class TypingObject : MonoBehaviour {
     /// </summary>
     public void SetText(int page)
     {
-        ts1.SetInputString(lyrics.GetLines(page, 0));
-        ts2.SetInputString(lyrics.GetLines(page, 1));
-        ts3.SetInputString(lyrics.GetLines(page, 2));
-        ts4.SetInputString(lyrics.GetLines(page, 3));
+        ts1.SetInputString(lyrics.GetLines(page, 0), btnKanaRoma.isKana);
+        ts2.SetInputString(lyrics.GetLines(page, 1), btnKanaRoma.isKana);
+        ts3.SetInputString(lyrics.GetLines(page, 2), btnKanaRoma.isKana);
+        ts4.SetInputString(lyrics.GetLines(page, 3), btnKanaRoma.isKana);
         stringTextMesh1.text = ts1.GetRestString();
         stringTextMesh2.text = ts2.GetRestString();
         stringTextMesh3.text = ts3.GetRestString();
         stringTextMesh4.text = ts4.GetRestString();
-        alphabetTextMesh.text = ts1.GetRestKey();
+        Debug.Log(btnKanaRoma.isKana);
+        alphabetTextMesh.text = ts1.GetRestKey(btnKanaRoma.isKana);
         if (ts1.GetInputString().Length != 0) targetLine = 1;
     }
 
@@ -258,7 +268,7 @@ public class TypingObject : MonoBehaviour {
                 if (targetLine > 3)
                 {
                     stringTextMesh4.text = "<color=#666666>" + ts4.GetInputedString() + "</color>" + ts4.GetRestString();
-                    alphabetTextMesh.text = "<color=#666666>" + ts4.GetInputedKey() + "</color>" + ts4.GetRestKey();
+                    alphabetTextMesh.text = "<color=#666666>" + ts4.GetInputedKey(btnKanaRoma.isKana) + "</color>" + ts4.GetRestKey(btnKanaRoma.isKana);
                     if (targetLine > 4)
                     {
                         alphabetTextMesh.text = "";
@@ -266,17 +276,17 @@ public class TypingObject : MonoBehaviour {
                 }
                 else
                 {
-                    alphabetTextMesh.text = "<color=#666666>" + ts3.GetInputedKey() + "</color>" + ts3.GetRestKey();
+                    alphabetTextMesh.text = "<color=#666666>" + ts3.GetInputedKey(btnKanaRoma.isKana) + "</color>" + ts3.GetRestKey(btnKanaRoma.isKana);
                 }
             }
             else
             {
-                alphabetTextMesh.text = "<color=#666666>" + ts2.GetInputedKey() + "</color>" + ts2.GetRestKey();
+                alphabetTextMesh.text = "<color=#666666>" + ts2.GetInputedKey(btnKanaRoma.isKana) + "</color>" + ts2.GetRestKey(btnKanaRoma.isKana);
             }
         }
         else
         {
-            alphabetTextMesh.text = "<color=#666666>" + ts1.GetInputedKey() + "</color>" + ts1.GetRestKey();
+            alphabetTextMesh.text = "<color=#666666>" + ts1.GetInputedKey(btnKanaRoma.isKana) + "</color>" + ts1.GetRestKey(btnKanaRoma.isKana);
         }
         yield break;
     }

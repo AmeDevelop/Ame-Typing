@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -288,6 +290,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\btnKanaRoma.cs" />
     <Compile Include="Assets\Scripts\btnPlay.cs" />
     <Compile Include="Assets\Scripts\Lyrics.cs" />
     <Compile Include="Assets\Scripts\Model\LyricsModel.cs" />
@@ -464,9 +467,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Lyrics\001.xml" />
-    <None Include="Assets\Lyrics\002.xml" />
-    <None Include="Assets\Lyrics\003.xml" />
+    <None Include="Assets\Lyrics\002.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Assets\Lyrics\003.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Lyrics\003_bk.xml" />
+    <None Include="Assets\Lyrics\003_edit.xml" />
     <None Include="Assets\Lyrics\004.xml" />
     <None Include="Assets\Lyrics\004_bk.xml" />
     <None Include="Assets\Lyrics\005.xml" />
