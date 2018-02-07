@@ -7,32 +7,41 @@ using UnityEngine.UI;
 public class MusicObject : MonoBehaviour {
 
     private AudioSource audioSource;
-    private AudioClip audioClip;
+   // private AudioClip audioClip;
 
     public TypingObject typeObj;
     public sldTimelim slider;
     public Toggle isEdit;
 
-    private GameObject gameObj;
-    private int pageCnt;
-    private int editPageCnt;
+    private GameObject _gameObj;
+    private int _pageCnt;
+    private int _editPageCnt;
     //private float playTime;
-    private float startSec;
-    private int maxPage;
-    private bool isSwitching;
-    private bool isEditing;
-    private bool isPlaying;
+    private float _startSec;
+    private int _maxPage;
+    private bool _isSwitching;
+    private bool _isEditing;
+    //private bool _isPlaying;
+    public static List<float> judgeInterval { get; private set; }
+
+    public const int JUDGE_PF = 4;
+    public const int JUDGE_GR = 3;
+    public const int JUDGE_GD = 2;
+    public const int JUDGE_OK = 1;
+    public const int JUDGE_BD = 0;
+    public const int JUDGE_NG = -1;
 
     // Use this for initialization
     void Start () {
         //playTime = 0f;
-        pageCnt = 0;
-        editPageCnt = 0;
-        startSec = 0f;
-        maxPage = 0;
-        isSwitching = false;
-        isEditing = false;
+        _pageCnt = 0;
+        _editPageCnt = 0;
+        _startSec = 0f;
+        _maxPage = 0;
+        _isSwitching = false;
+        _isEditing = false;
         audioSource = GetComponent<AudioSource>();
+        judgeInterval =  new List<float>();
     }
 
     // Update is called once per frame
@@ -40,35 +49,33 @@ public class MusicObject : MonoBehaviour {
 
         if (!audioSource.isPlaying) return;
 
-        // 時間計測開始
-        // playTime += Time.deltaTime;
-        // Debug.Log(audioSource.time);
-
         // 編集モードの場合は時間の計測
-        StartCoroutine(EditTiming(editPageCnt, audioSource.time));
+        StartCoroutine(EditTiming(_editPageCnt, audioSource.time));
 
         // 開始時間が来たらページ遷移をする
-        //if (playTime >= startSec)
-        if (audioSource.time >= startSec)
+        if (audioSource.time >= _startSec)
         {
-            if (pageCnt < maxPage)
+            if (_pageCnt < _maxPage)
             {
                 // ページ遷移
-                StartCoroutine(SwitchPage(pageCnt));
-                pageCnt++;
-                if (pageCnt < maxPage)
+                StartCoroutine(SwitchPage(_pageCnt, _startSec));
+                _pageCnt++;
+                if (_pageCnt < _maxPage)
                 {
-                    startSec = float.Parse(typeObj.GetStartTime(pageCnt));
+                    _startSec = float.Parse(typeObj.GetStartTime(_pageCnt));
                 }
             }
             else
             {
                 // MAXページ数を過ぎたらキャンセルさせる
-                gameObj = GameObject.Find("btn_play");
-                Toggle btn = gameObj.GetComponent<Toggle>();
+                _gameObj = GameObject.Find("btn_play");
+                Toggle btn = _gameObj.GetComponent<Toggle>();
                 btn.isOn = false;
             }
         }
+
+        // 判定基準の更新
+        StartCoroutine(UpdateJudge(audioSource.time));
     }
 
     /// <summary>
@@ -86,12 +93,13 @@ public class MusicObject : MonoBehaviour {
     public void StartMusic (string num)
     {
         // playTime = 0f;
-        pageCnt = 0;
-        editPageCnt = 0;
-        startSec = float.Parse(typeObj.GetStartTime(pageCnt));
-        maxPage = typeObj.GetMaxPage();
-        isSwitching = false;
-        isEditing = false;
+        _pageCnt = 0;
+        _editPageCnt = 0;
+        _startSec = float.Parse(typeObj.GetStartTime(_pageCnt));
+        _maxPage = typeObj.GetMaxPage();
+        _isSwitching = false;
+        _isEditing = false;
+        judgeInterval.Clear();
 
         // 音楽読み込み
         StartCoroutine(StreamPlayAudioFile(num));
@@ -134,12 +142,14 @@ public class MusicObject : MonoBehaviour {
         //audioClip = null;
         StopCoroutine(StreamPlayAudioFile(""));
         // playTime = 0f;
-        pageCnt = 0;
-        editPageCnt = 0;
-        startSec = 0f;
+        _pageCnt = 0;
+        _editPageCnt = 0;
+        _startSec = 0f;
+        judgeInterval.Clear();
 
         StopCoroutine(EditTiming(0, 0));
-        StopCoroutine(SwitchPage(0));
+        StopCoroutine(SwitchPage(0, 0f));
+        StopCoroutine(UpdateJudge(0f));
 
         // 編集モードの場合はXMLデータ書き込み
         if (isEdit.isOn)
@@ -147,11 +157,11 @@ public class MusicObject : MonoBehaviour {
             typeObj.editLyricsFile();
         }
 
-        isSwitching = false;
-        isEditing = false;
+        _isSwitching = false;
+        _isEditing = false;
         typeObj.CancelTyping();
         slider.InitVal();
-        slider.roop = false;
+        slider.loop = false;
     }
 
     /// <summary>
@@ -159,23 +169,40 @@ public class MusicObject : MonoBehaviour {
     /// </summary>
     /// <param name="i"></param>
     /// <returns></returns>
-    private IEnumerator SwitchPage(int i)
+    private IEnumerator SwitchPage(int i, float startSec)
     {
-        if (isSwitching) yield break;
-        isSwitching = true;
+        if (_isSwitching) yield break;
+        _isSwitching = true;
 
         // 時間が来たらページ遷移
         // 1. テキストをアップデート
+        typeObj.JudgeAllEnded();
         typeObj.SetText(i);
+
         // 2. 時間スライダーの表示を初期化
         slider.InitVal();
-        if (i < maxPage - 1)
+        if (i < _maxPage - 1)
         {
-            slider.countTime = float.Parse(typeObj.GetInterval(i + 1));
-            slider.roop = true;
+            // インターバルを取得
+            float interval = float.Parse(typeObj.GetInterval(i + 1));
+            slider.countTime = interval;
+            slider.loop = true;
+
+            // 各判定の切替タイミングを設定
+            // PF:GR:GD:OK:BD=1:2:3:2:2で設定
+            judgeInterval.Clear();
+            float per = interval / 10;
+            startSec += per * 1.0f;
+            judgeInterval.Add(startSec);
+            startSec += per * 2.0f;
+            judgeInterval.Add(startSec);
+            startSec += per * 3.0f;
+            judgeInterval.Add(startSec);
+            startSec += per * 2.0f;
+            judgeInterval.Add(startSec);
         }
 
-        isSwitching = false;
+        _isSwitching = false;
         yield break;
     }
 
@@ -187,8 +214,8 @@ public class MusicObject : MonoBehaviour {
     /// <returns></returns>
     private IEnumerator EditTiming(int page, float startTime)
     {
-        if (!isEdit.isOn || isEditing) yield break;
-        isEditing = true;
+        if (!isEdit.isOn || _isEditing) yield break;
+        _isEditing = true;
 
         // スペースキーで編集
         if (Input.GetKeyDown("space"))
@@ -196,10 +223,28 @@ public class MusicObject : MonoBehaviour {
 
             Debug.Log("[Edit mode] page:" + page + " start time:" + startTime);
             typeObj.editTime(page, startTime - 0.2f);
-            editPageCnt++;
+            _editPageCnt++;
         }
 
-        isEditing = false;
+        _isEditing = false;
+        yield break;
+    }
+
+    /// <summary>
+    /// ジャッジの更新
+    /// </summary>
+    /// <param name="currentTime"></param>
+    private IEnumerator UpdateJudge(float currentTime)
+    {
+        if (judgeInterval.Count == 0) yield break;
+
+        if (currentTime >= judgeInterval[0])
+        {
+            // 時間が来たらスライダーの色を更新し、次のジャッジインターバルに更新する
+            judgeInterval.RemoveAt(0);
+            slider.ChangeColor(judgeInterval.Count);
+        }
+
         yield break;
     }
 }

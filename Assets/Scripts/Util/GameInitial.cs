@@ -5,7 +5,7 @@ public class GameInitia
     [RuntimeInitializeOnLoadMethod]
     static void OnRuntimeMethodLoad()
     {
-        Screen.SetResolution(1000, 800, false);
+        Screen.SetResolution(900, 720, false);
 
     }
 }

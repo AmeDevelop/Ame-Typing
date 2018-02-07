@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class btnPlay : MonoBehaviour {
 
-    public TimerObject timeObj;
     public MusicObject musicObj;
     private Toggle btn_play;
     public Text id;
+    public GaugeObject gaugeObj;
+    public ScoreObject scoreObj;
 
     public static bool play_started;
 
@@ -31,6 +32,8 @@ public class btnPlay : MonoBehaviour {
         {
             if (id.text == "000") return;
             Debug.Log("Play started:");
+            gaugeObj.Init();
+            scoreObj.Init();
             musicObj.Prepare(id.text);
             musicObj.StartMusic(id.text);
             //timeObj.StartTimer();
@@ -42,6 +45,8 @@ public class btnPlay : MonoBehaviour {
             play_started = false;
             //timeObj.CancelTimer();
             musicObj.CancelMusic();
+            gaugeObj.Clear();
+            scoreObj.Clear();
         }
     }
 }

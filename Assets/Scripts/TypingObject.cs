@@ -18,6 +18,8 @@ public class TypingObject : MonoBehaviour {
     private TypingSystem ts4;
     private int targetLine;
 
+    // private List<string> keys = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "'", "\"", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "`", "[", "a", "s", "d", "f", "g", "h", "j", "k", "l", "=", ";", "]", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "\\"};
+    //private List<string> keys = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "'", "\"", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "`", "[", "a", "s", "d", "f", "g", "h", "j", "k", "l", "=", ";", "]", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "\\" };
     private string[] keys = { "1","2","3","4","5","6","7","8","9","0","-","'","\"","q","w","e","r","t","y","u","i","o","p","`","[","a","s","d","f","g","h","j","k","l","=",";","]","z","x","c","v","b","n","m",",",".","/","\\", };
     //private string[] keys = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "\"", "#", "$", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", };
     public Lyrics lyrics;
@@ -109,6 +111,7 @@ public class TypingObject : MonoBehaviour {
     public void CancelTyping()
     {
         StopCoroutine("UpdateText");
+        StopCoroutine(ControlJudge());
         stringTextMesh1.color = Color.white;
         stringTextMesh2.color = Color.white;
         stringTextMesh3.color = Color.white;
@@ -133,6 +136,8 @@ public class TypingObject : MonoBehaviour {
         if (targetLine == 0 || targetLine > 4)
             return;
 
+        // どっちが速いかテスト
+        #region GetKeyDown
         // シフトキー押下しているかどうか
         bool isShift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
@@ -161,6 +166,39 @@ public class TypingObject : MonoBehaviour {
                 }
             }
         }
+        #endregion
+        #region anyKeyDown
+        // JISで入力するとInput.Stringで取れない文字がある…
+        //if (Input.anyKeyDown)
+        //{
+        //    // シフトキー押下しているかどうか
+        //    bool isShift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        //    foreach (char c in Input.inputString)
+        //    {
+        //        string key = c.ToString();
+        //        if (!keys.Contains(key)) continue;
+        //        Debug.Log(key);
+        //        switch (targetLine)
+        //        {
+        //            case 1:
+        //                ControlUpdate(ts1, key, isShift, ts2);
+        //                break;
+        //            case 2:
+        //                ControlUpdate(ts2, key, isShift, ts3);
+        //                break;
+        //            case 3:
+        //                ControlUpdate(ts3, key, isShift, ts4);
+        //                break;
+        //            case 4:
+        //                ControlUpdate(ts4, key, isShift);
+        //                break;
+        //            default:
+        //                //Debug.Log("ERROR: " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+        //                break;
+        //        }
+        //    }
+        //}
+        #endregion
     }
 
     /// <summary>
@@ -205,8 +243,8 @@ public class TypingObject : MonoBehaviour {
 
         if (comb)
         {
-            // コンボサウンドを鳴らす
-            setype.Combo();
+            // 判定サウンドを鳴らす
+            StartCoroutine(ControlJudge());
         }
 
     }
@@ -248,9 +286,14 @@ public class TypingObject : MonoBehaviour {
         stringTextMesh2.text = ts2.GetRestString();
         stringTextMesh3.text = ts3.GetRestString();
         stringTextMesh4.text = ts4.GetRestString();
-        Debug.Log(btnKanaRoma.isKana);
         alphabetTextMesh.text = ts1.GetRestKey(btnKanaRoma.isKana);
-        if (ts1.GetInputString().Length != 0) targetLine = 1;
+        if (ts1.GetInputString().Length != 0)
+        {
+            targetLine = 1;
+        } else
+        {
+            targetLine = 0;
+        }
     }
 
     /// <summary>
@@ -290,4 +333,36 @@ public class TypingObject : MonoBehaviour {
         }
         yield break;
     }
+
+    /// <summary>
+    /// ページのタイピングがすべて終了したかどうかでサウンドを鳴らす
+    /// </summary>
+    /// <returns></returns>
+    public void JudgeAllEnded()
+    {
+        if (0 < targetLine && targetLine < 5)
+        {
+            int ngCnt
+                = ts4.GetRestString().Length - ts4.GetRestString().Replace(" ", "").Length
+                + ts3.GetRestString().Length - ts3.GetRestString().Replace(" ", "").Length
+                + ts2.GetRestString().Length - ts2.GetRestString().Replace(" ", "").Length
+                + ts1.GetRestString().Length - ts1.GetRestString().Replace(" ", "").Length;
+            if (!ts4.isEnded()) ngCnt++;
+            if (!ts3.isEnded()) ngCnt++;
+            if (!ts2.isEnded()) ngCnt++;
+            if (!ts1.isEnded()) ngCnt++;
+            StartCoroutine(ControlJudge(true, ngCnt));
+        }
+    }
+
+    /// <summary>
+    /// ジャッジ音とゲージの判定
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator ControlJudge(bool judgeNG = false, int ngCnt = 0)
+    {
+        setype.Judge(judgeNG, ngCnt);
+        yield break;
+    }
+
 }

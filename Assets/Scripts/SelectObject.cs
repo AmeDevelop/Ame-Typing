@@ -7,7 +7,7 @@ using UnityEngine.UI.Extensions;
 
 public class SelectObject : MonoBehaviour
 {
-
+    public Text stringTitle;
     public Text stringArtist;
     public Text stringLevel;
     public Text stringTotal;
@@ -46,6 +46,7 @@ public class SelectObject : MonoBehaviour
         Music selected = list.music.Find(x => x.id == id);
         if (selected == null) return;
         stringNo.text = id;
+        stringTitle.text = selected.title;
         stringArtist.text = selected.artist;
         stringLevel.text = selected.level.ToString();
         stringTotal.text = selected.time;
