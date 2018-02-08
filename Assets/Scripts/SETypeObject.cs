@@ -14,6 +14,14 @@ public class SETypeObject : MonoBehaviour {
     private AudioClip audioClip_COMB_BD;
     private AudioClip audioClip_COMB_NG;
 
+    public const int AUDIO_START = 1;
+    public const int AUDIO_CLEAR = 2;
+    public const int AUDIO_OVER = 3;
+
+    private AudioClip audioClip_VOICE;
+    private AudioClip audioClip_SOUND;
+
+
     public GaugeObject gaugeObj;
     public ScoreObject scoreObj;
 
@@ -27,14 +35,14 @@ public class SETypeObject : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        audioClip_OK = (AudioClip)Resources.Load("se_tp_ok_02");
-        audioClip_NG = (AudioClip)Resources.Load("se_tp_ng");
-        audioClip_COMB_PF = (AudioClip)Resources.Load("se_cmb_pf");
-        audioClip_COMB_GR = (AudioClip)Resources.Load("se_cmb_gr");
-        audioClip_COMB_GD = (AudioClip)Resources.Load("se_cmb_gd");
-        audioClip_COMB_OK = (AudioClip)Resources.Load("se_cmb_ok");
-        audioClip_COMB_BD = (AudioClip)Resources.Load("se_cmb_bd");
-        audioClip_COMB_NG = (AudioClip)Resources.Load("se_cmb_ng");
+        audioClip_OK = (AudioClip)Resources.Load("se/se_tp_ok_02");
+        audioClip_NG = (AudioClip)Resources.Load("se/se_tp_ng");
+        audioClip_COMB_PF = (AudioClip)Resources.Load("se/se_cmb_pf");
+        audioClip_COMB_GR = (AudioClip)Resources.Load("se/se_cmb_gr");
+        audioClip_COMB_GD = (AudioClip)Resources.Load("se/se_cmb_gd");
+        audioClip_COMB_OK = (AudioClip)Resources.Load("se/se_cmb_ok");
+        audioClip_COMB_BD = (AudioClip)Resources.Load("se/se_cmb_bd");
+        audioClip_COMB_NG = (AudioClip)Resources.Load("se/se_cmb_ng");
     }
 
     // Update is called once per frame
@@ -103,6 +111,29 @@ public class SETypeObject : MonoBehaviour {
             default:
                 break;
         }
+    }
 
+    /// <summary>
+    /// ゲームスタートエンド時の音
+    /// </summary>
+    /// <param name="type"></param>
+    public void GameStartEnd(int type)
+    {
+        switch (type)
+        {
+            case AUDIO_START:
+                audioSource.PlayOneShot((AudioClip)Resources.Load("se/se_game_start_voice"));
+                break;
+            case AUDIO_CLEAR:
+                audioSource.PlayOneShot((AudioClip)Resources.Load("se/se_game_clear"));
+                audioSource.PlayOneShot((AudioClip)Resources.Load("se/se_game_clear_voice"));
+                break;
+            case AUDIO_OVER:
+                audioSource.PlayOneShot((AudioClip)Resources.Load("se/se_game_over"));
+                audioSource.PlayOneShot((AudioClip)Resources.Load("se/se_game_over_voice"));
+                break;
+            default:
+                break;
+        }
     }
 }

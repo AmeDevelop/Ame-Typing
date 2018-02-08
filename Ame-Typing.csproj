@@ -307,6 +307,8 @@
     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
     <Compile Include="Assets\Scripts\btnKanaRoma.cs" />
     <Compile Include="Assets\Scripts\btnPlay.cs" />
+    <Compile Include="Assets\Scripts\btnUrlObject.cs" />
+    <Compile Include="Assets\Scripts\EmoObject.cs" />
     <Compile Include="Assets\Scripts\GaugeObject.cs" />
     <Compile Include="Assets\Scripts\JudgeTweenObject.cs" />
     <Compile Include="Assets\Scripts\Lyrics.cs" />
@@ -315,6 +317,7 @@
     <Compile Include="Assets\Scripts\MusicObject.cs" />
     <Compile Include="Assets\Scripts\ScoreObject.cs" />
     <Compile Include="Assets\Scripts\ScoreTweenObject.cs" />
+    <Compile Include="Assets\Scripts\ScreenObject.cs" />
     <Compile Include="Assets\Scripts\SelectObject.cs" />
     <Compile Include="Assets\Scripts\SETypeObject.cs" />
     <Compile Include="Assets\Scripts\sldTimelim.cs" />
@@ -504,6 +507,9 @@
     <None Include="Assets\Lyrics\012.xml" />
     <None Include="Assets\Lyrics\013.xml" />
     <None Include="Assets\Lyrics\014.xml" />
+    <None Include="Assets\Lyrics\015.xml" />
+    <None Include="Assets\Lyrics\016.xml" />
+    <None Include="Assets\Lyrics\017.xml" />
     <None Include="Assets\Lyrics\dictionary.txt" />
     <None Include="Assets\Lyrics\music_list.xml" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />

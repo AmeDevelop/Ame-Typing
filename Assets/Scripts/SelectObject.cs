@@ -12,7 +12,8 @@ public class SelectObject : MonoBehaviour
     public Text stringLevel;
     public Text stringTotal;
     public Text stringNo;
-    public Image Sumnail;
+    public Text stringUrl;
+    public RawImage Sumnail;
     private AutoCompleteComboBox cmbList;
 
     MusicListModel list;
@@ -39,6 +40,10 @@ public class SelectObject : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// コンボボックスで曲が選択されたのち楽曲情報を設定する
+    /// </summary>
+    /// <param name="curStr"></param>
     public void ShowMusicInfo(string curStr)
     {
         if (curStr.Length < 4) return;
@@ -50,6 +55,17 @@ public class SelectObject : MonoBehaviour
         stringArtist.text = selected.artist;
         stringLevel.text = selected.level.ToString();
         stringTotal.text = selected.time;
+        stringUrl.text = selected.url;
+
+        StringBuilder path = new StringBuilder("sumnail/");
+        path.Append(id);
+        Texture txture = Resources.Load<Texture>(path.ToString());
+        if (txture == null)
+        {
+            path.Replace(id, "000");
+            txture = Resources.Load<Texture>(path.ToString());
+        }
+        Sumnail.texture = txture;
     }
 }
 

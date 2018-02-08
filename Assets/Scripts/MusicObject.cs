@@ -68,6 +68,7 @@ public class MusicObject : MonoBehaviour {
             else
             {
                 // MAXページ数を過ぎたらキャンセルさせる
+                btnPlay.isClear = (GaugeObject.curGaugeCnt == 0) ? false : true;
                 _gameObj = GameObject.Find("btn_play");
                 Toggle btn = _gameObj.GetComponent<Toggle>();
                 btn.isOn = false;
@@ -159,10 +160,20 @@ public class MusicObject : MonoBehaviour {
 
         _isSwitching = false;
         _isEditing = false;
-        typeObj.CancelTyping();
+        typeObj.InitText();
+        //typeObj.CancelTyping();
         slider.InitVal();
         slider.loop = false;
     }
+
+    /// <summary>
+    /// 曲キャンセル時の表示初期化
+    /// </summary>
+    public void PostProcess()
+    {
+        typeObj.CancelTyping();
+    }
+
 
     /// <summary>
     /// ページ遷移

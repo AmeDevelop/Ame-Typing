@@ -66,7 +66,7 @@ public class ScoreObject : MonoBehaviour {
     /// </summary>
     public void UpdateScore(int judge)
     {
-        Debug.Log(judge);
+        //Debug.Log(judge);
 
         // ゲージがなくなっていたら、それ以上カウントしない
         if (GaugeObject.curGaugeCnt == 0) return;
