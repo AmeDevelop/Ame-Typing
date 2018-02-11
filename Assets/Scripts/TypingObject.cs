@@ -19,12 +19,15 @@ public class TypingObject : MonoBehaviour {
     private int targetLine;
 
     // private List<string> keys = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "'", "\"", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "`", "[", "a", "s", "d", "f", "g", "h", "j", "k", "l", "=", ";", "]", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "\\"};
-    //private List<string> keys = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "'", "\"", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "`", "[", "a", "s", "d", "f", "g", "h", "j", "k", "l", "=", ";", "]", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "\\" };
     private string[] keys = { "1","2","3","4","5","6","7","8","9","0","-","'","\"","q","w","e","r","t","y","u","i","o","p","`","[","a","s","d","f","g","h","j","k","l","=",";","]","z","x","c","v","b","n","m",",",".","/","\\", };
-    //private string[] keys = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "\"", "#", "$", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", };
     public Lyrics lyrics;
 
     public SETypeObject setype;
+    public JudgeObject judgeObj;
+
+    public static int cntCorrect;
+    public static int cntInCorrect;
+
 
     private void Awake()
     {
@@ -39,7 +42,8 @@ public class TypingObject : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        cntCorrect = 0;
+        cntInCorrect = 0;
     }
 
     // Update is called once per frame
@@ -111,19 +115,23 @@ public class TypingObject : MonoBehaviour {
     public void CancelTyping()
     {
         StopCoroutine("UpdateText");
-        StopCoroutine(ControlJudge());
+        StopCoroutine(ControlJudge(false, 0 , 0));
+        StopCoroutine(SetJudgePoint(null));
         stringTextMesh1.color = Color.white;
         stringTextMesh2.color = Color.white;
         stringTextMesh3.color = Color.white;
         stringTextMesh4.color = Color.white;
         alphabetTextMesh.color = Color.white;
-        stringTextMesh1.text = "PRESS START !!";
-        stringTextMesh2.text = "PRESS START !!";
-        stringTextMesh3.text = "PRESS START !!";
-        stringTextMesh4.text = "PRESS START !!";
-        alphabetTextMesh.text = "PRESS START !!";
+        stringTextMesh1.text = "SELECT MUSIC & PRESS START!!";
+        stringTextMesh2.text = "";
+        stringTextMesh3.text = "";
+        stringTextMesh4.text = "";
+        alphabetTextMesh.text = "SELECT MUSIC & PRESS START !!";
         lyrics.UnloadLyrics();
         //pageCnt = 0;
+        setype.initCount();
+        cntCorrect = 0;
+        cntInCorrect = 0;
     }
 
     /// <summary>
@@ -211,10 +219,12 @@ public class TypingObject : MonoBehaviour {
     void ControlUpdate(TypingSystem ts, string key, bool isShift, TypingSystem nextts = null)
     {
         bool comb = false;
+        int curTargetLIne = targetLine;
 
         if (ts.InputKey(key, btnKanaRoma.isKana, isShift) == 1 )
         {
             setype.OKtype();
+            cntCorrect++;
             // スペース判定
             if (ts.GetRestString().Length > 0 && ts.GetRestString()[0] == ' ')
             {
@@ -226,6 +236,7 @@ public class TypingObject : MonoBehaviour {
         else
         {
             setype.NGtype();
+            cntInCorrect++;
         }
 
         if (ts.isEnded())
@@ -244,7 +255,7 @@ public class TypingObject : MonoBehaviour {
         if (comb)
         {
             // 判定サウンドを鳴らす
-            StartCoroutine(ControlJudge());
+            StartCoroutine(ControlJudge(false, 0 , curTargetLIne));
         }
 
     }
@@ -270,6 +281,9 @@ public class TypingObject : MonoBehaviour {
         stringTextMesh4.color = Color.red;
         alphabetTextMesh.color = Color.red;
         targetLine = 0;
+        setype.initCount();
+        cntCorrect = 0;
+        cntInCorrect = 0;
     }
 
     /// <summary>
@@ -294,6 +308,8 @@ public class TypingObject : MonoBehaviour {
         {
             targetLine = 0;
         }
+        string[] inputStr = { ts1.GetRestString(), ts2.GetRestString(), ts3.GetRestString(), ts4.GetRestString() };
+        StartCoroutine(SetJudgePoint(inputStr));
     }
 
     /// <summary>
@@ -351,7 +367,7 @@ public class TypingObject : MonoBehaviour {
             if (!ts3.isEnded()) ngCnt++;
             if (!ts2.isEnded()) ngCnt++;
             if (!ts1.isEnded()) ngCnt++;
-            StartCoroutine(ControlJudge(true, ngCnt));
+            StartCoroutine(ControlJudge(true, ngCnt, 0));
         }
     }
 
@@ -359,9 +375,20 @@ public class TypingObject : MonoBehaviour {
     /// ジャッジ音とゲージの判定
     /// </summary>
     /// <returns></returns>
-    private IEnumerator ControlJudge(bool judgeNG = false, int ngCnt = 0)
+    private IEnumerator ControlJudge(bool judgeNG, int ngCnt, int lineNum)
     {
-        setype.Judge(judgeNG, ngCnt);
+        setype.Judge(judgeNG, ngCnt, lineNum);
+        yield break;
+    }
+
+    /// <summary>
+    /// ジャッジの表記ポイント設定
+    /// </summary>
+    /// <param name="inputstr"></param>
+    /// <returns></returns>
+    private IEnumerator SetJudgePoint(string[] inputstr)
+    {
+        judgeObj.SetJudgePoint(inputstr);
         yield break;
     }
 

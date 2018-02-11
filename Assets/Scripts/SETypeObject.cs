@@ -24,6 +24,7 @@ public class SETypeObject : MonoBehaviour {
 
     public GaugeObject gaugeObj;
     public ScoreObject scoreObj;
+    public JudgeObject judgeObj;
 
     public const int PLUMI_PF = 3;
     public const int PLUMI_GR = 2;
@@ -31,6 +32,13 @@ public class SETypeObject : MonoBehaviour {
     public const int PLUMI_OK = 0;
     public const int PLUMI_BD = -2;
     public const int PLUMI_NG = -3;
+
+    public static int cntPf;
+    public static int cntGr;
+    public static int cntGd;
+    public static int cntOk;
+    public static int cntBd;
+    public static int cntNg;
 
 
     // Use this for initialization
@@ -49,6 +57,19 @@ public class SETypeObject : MonoBehaviour {
     void Update () {
 		
 	}
+
+    /// <summary>
+    /// カウント数のリセット
+    /// </summary>
+    public void initCount()
+    {
+        cntPf = 0;
+        cntGr = 0;
+        cntGd = 0;
+        cntOk = 0;
+        cntBd = 0;
+        cntNg = 0;
+    }
 
     /// <summary>
     /// OKタイピング音
@@ -71,14 +92,16 @@ public class SETypeObject : MonoBehaviour {
     /// コンボ音
     /// <paramref name="judgeNG"/>
     /// <paramref name="ngCnt"/>
+    /// <paramref name="lineNum"/>
     /// </summary>
-    public void Judge(bool judgeNG, int ngCnt)
+    public void Judge(bool judgeNG, int ngCnt, int lineNum)
     {
         if (judgeNG)
         {
             audioSource.PlayOneShot(audioClip_COMB_NG);
             gaugeObj.PlusMinus(ngCnt * PLUMI_NG);
             scoreObj.UpdateScore(MusicObject.JUDGE_NG);
+            cntNg += ngCnt;
             return;
         }
 
@@ -86,27 +109,36 @@ public class SETypeObject : MonoBehaviour {
         {
             case MusicObject.JUDGE_PF:
                 audioSource.PlayOneShot(audioClip_COMB_PF);
+                judgeObj.ShowJudge(lineNum, MusicObject.JUDGE_PF);
                 gaugeObj.PlusMinus(PLUMI_PF);
                 scoreObj.UpdateScore(MusicObject.JUDGE_PF);
+                cntPf++;
                 break;
             case MusicObject.JUDGE_GR:
                 audioSource.PlayOneShot(audioClip_COMB_GR);
+                judgeObj.ShowJudge(lineNum, MusicObject.JUDGE_GR);
                 gaugeObj.PlusMinus(PLUMI_GR);
                 scoreObj.UpdateScore(MusicObject.JUDGE_GR);
+                cntGr++;
                 break;
             case MusicObject.JUDGE_GD:
                 audioSource.PlayOneShot(audioClip_COMB_GD);
+                judgeObj.ShowJudge(lineNum, MusicObject.JUDGE_GD);
                 gaugeObj.PlusMinus(PLUMI_GD);
                 scoreObj.UpdateScore(MusicObject.JUDGE_GD);
+                cntGd++;
                 break;
             case MusicObject.JUDGE_OK:
                 audioSource.PlayOneShot(audioClip_COMB_OK);
+                judgeObj.ShowJudge(lineNum, MusicObject.JUDGE_OK);
                 scoreObj.UpdateScore(MusicObject.JUDGE_OK);
+                cntOk++;
                 break;
             case MusicObject.JUDGE_BD:
                 audioSource.PlayOneShot(audioClip_COMB_BD);
                 gaugeObj.PlusMinus(PLUMI_BD);
                 scoreObj.UpdateScore(MusicObject.JUDGE_BD);
+                cntBd++;
                 break;
             default:
                 break;

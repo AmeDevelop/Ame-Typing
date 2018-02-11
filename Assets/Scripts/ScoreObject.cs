@@ -18,6 +18,8 @@ public class ScoreObject : MonoBehaviour {
 
     private int _score;
     private int _chain;
+
+    public static int _maxCombo;
  
     public ScoreTweenObject sctwObj;
     //public TextMeshProUGUI txtGauge;
@@ -47,6 +49,7 @@ public class ScoreObject : MonoBehaviour {
 
         _score = 0;
         _chain = 0;
+        _maxCombo = 0;
         sctwObj.Num = _score;
     }
 
@@ -58,6 +61,7 @@ public class ScoreObject : MonoBehaviour {
         _scoreBase.Clear();
         _score = 0;
         _chain = 0;
+        _maxCombo = 0;
         sctwObj.Num = _score;
     }
 
@@ -80,6 +84,13 @@ public class ScoreObject : MonoBehaviour {
 
         // 連鎖数をカウントアップ
         _chain++;
+
+        // コンボの表示
+        if (_chain >  3)
+        {
+            GameObject.Find("txt_combo").GetComponent<ComboTweenObject>().ComboTween(_chain - 3);
+            _maxCombo = (_chain - 3 > _maxCombo) ? _chain - 3 : _maxCombo;
+        }
 
         // ボーナスを設定
         float bonus = 1.0f;

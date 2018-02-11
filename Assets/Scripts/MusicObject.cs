@@ -116,6 +116,7 @@ public class MusicObject : MonoBehaviour {
     IEnumerator StreamPlayAudioFile(string num)
     {
         //ソース指定し音楽流す
+        // TODO: ファイルサーバーからの読み込みにできれば…
         StringBuilder path = new StringBuilder("file:///");
         path.Append(Application.dataPath);
         path.Append("/Music/");

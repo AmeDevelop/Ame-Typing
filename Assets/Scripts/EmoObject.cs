@@ -119,7 +119,6 @@ public class EmoObject : MonoBehaviour
         sequence.Play();
 
         //StartCoroutine("tempAnime");
-
     }
 
     /// <summary>
